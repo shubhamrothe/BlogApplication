@@ -21,50 +21,58 @@ import com.example.payloads.ApiResponse;
 import com.example.payloads.UserDto;
 import com.example.services.UserServiceI;
 
-
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/users")
 @Validated
+@Slf4j
 public class UserController {
-	
+
 	@Autowired
 	private UserServiceI userServiceI;
 
-	//POST
+	// POST
 	@PostMapping("/")
-	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
-		
+	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
+		log.info("Requesting to create a User");
 		UserDto createUserDto = this.userServiceI.createUser(userDto);
-		return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);   
+		log.info("Completed the request to create a User");
+		return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
 	}
-	
-	//PUT
+
+	// PUT
 	@PutMapping("/{userId}")
-	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable Integer userId){
+	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable Integer userId) {
+		log.info("Requesting to update a User of userId {}" + userId);
 		UserDto updatedUserDto = this.userServiceI.updateUserById(userDto, userId);
+		log.info("Completed the request to update a User of userId {}" + userId);
 		return ResponseEntity.ok(updatedUserDto);
-		
 	}
-	
-	//DELETE
+
+	// DELETE
 	@DeleteMapping("/{userId}")
-	public ResponseEntity<ApiResponse> deleteUserById(@PathVariable Integer userId){
+	public ResponseEntity<ApiResponse> deleteUserById(@PathVariable Integer userId) {
+		log.info("Requesting to delete a User of userId {}" + userId);
 		this.userServiceI.deleteUserById(userId);
+		log.info("Completed the request to delete a User of userId {}" + userId);
 		return new ResponseEntity<ApiResponse>(new ApiResponse("User deleted successfully !", true), HttpStatus.OK);
-		
 	}
-	
-	//GET-ALL
+
+	// GET-ALL
 	@GetMapping("/")
-	public ResponseEntity<List<UserDto>> getAllUsers(){
+	public ResponseEntity<List<UserDto>> getAllUsers() {
+		log.info("Requesting to retrive all Users");
 		List<UserDto> list = this.userServiceI.getAllUsers();
+		log.info("Completed the request to get all Users");
 		return ResponseEntity.ok(list);
 	}
-	
-	//GET
+
+	// GET
 	@GetMapping("/{userId}")
-	public ResponseEntity<UserDto> getUserById(@PathVariable Integer userId){
-		return ResponseEntity.ok( this.userServiceI.getUserById(userId));
+	public ResponseEntity<UserDto> getUserById(@PathVariable Integer userId) {
+		log.info("Requesting to retrive a User of userId {}" + userId);
+		log.info("Completed the request to get a User of userId {}" + userId);
+		return ResponseEntity.ok(this.userServiceI.getUserById(userId));
 	}
 }

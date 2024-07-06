@@ -13,54 +13,71 @@ import com.example.payloads.CategoryDto;
 import com.example.repositories.CategoryRepository;
 import com.example.services.CategoryServiceI;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class CategoryServiceImpl implements CategoryServiceI {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
-	
-	//CREATE
+
+	// CREATE
 	@Override
 	public CategoryDto createCategory(CategoryDto categoryDto) {
+		log.info("Initiating the service layer to create a Category");
 		Category category = this.modelMapper.map(categoryDto, Category.class);
 		Category saved = this.categoryRepository.save(category);
+		log.info("Completed the service layer to create a Category");
 		return this.modelMapper.map(saved, CategoryDto.class);
 	}
 
-	//UPDATE
+	// UPDATE
 	@Override
 	public CategoryDto updateCategoryById(CategoryDto categoryDto, Integer categoryId) {
-		Category category = this.categoryRepository.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category", "categoryId", categoryId));
+		log.info("Initiating the service layer to update a Category of categoryId: {}", categoryId);
+		Category category = this.categoryRepository.findById(categoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 		category.setCategoryTitle(categoryDto.getCategoryTitle());
 		category.setCategoryDescription(categoryDto.getCategoryDescription());
 		Category updatedCategory = this.categoryRepository.save(category);
+		log.info("Completed the service layer to update a Category of categoryId: {}", categoryId);
 		return this.modelMapper.map(updatedCategory, CategoryDto.class);
 	}
 
-	//DELETE
+	// DELETE
 	@Override
 	public void deleteCategoryById(Integer categoryId) {
-		Category category = this.categoryRepository.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category", "categoryId", categoryId));
+		log.info("Initiating the service layer to delete a Category of categoryId: {}", categoryId);
+		Category category = this.categoryRepository.findById(categoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
+		log.info("Completed the service layer to delete a Category of categoryId: {}", categoryId);
 		this.categoryRepository.delete(category);
 	}
 
-	//GETById
+	// GETById
 	@Override
 	public CategoryDto getCategoryById(Integer categoryId) {
-		Category category = this.categoryRepository.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category","categoryId", categoryId));
+		log.info("Initiating the service layer to get a Category of categoryId: {}", categoryId);
+		Category category = this.categoryRepository.findById(categoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
+		log.info("Completed the service layer to get a Category of categoryId: {}", categoryId);
 		return this.modelMapper.map(category, CategoryDto.class);
 	}
 
-	//GETALL
-	//@SuppressWarnings("unchecked")
+	// GETALL
+	// @SuppressWarnings("unchecked")
 	@Override
 	public List<CategoryDto> getAllCategory() {
+		log.info("Initiating the service layer to get all Categories");
 		List<Category> catagories = this.categoryRepository.findAll();
-		//return (List<CategoryDto>) this.modelMapper.map(findAll, CategoryDto.class);
-		List<CategoryDto> listOfCatDto = catagories.stream().map((cat)-> this.modelMapper.map(cat, CategoryDto.class)).collect(Collectors.toList());
+		// return (List<CategoryDto>) this.modelMapper.map(findAll, CategoryDto.class);
+		List<CategoryDto> listOfCatDto = catagories.stream().map((cat) -> this.modelMapper.map(cat, CategoryDto.class))
+				.collect(Collectors.toList());
+		log.info("Completed the service layer to get a Categories");
 		return listOfCatDto;
 	}
 

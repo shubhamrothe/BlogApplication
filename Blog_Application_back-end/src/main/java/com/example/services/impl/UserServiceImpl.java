@@ -13,72 +13,82 @@ import com.example.payloads.UserDto;
 import com.example.repositories.UserRepository;
 import com.example.services.UserServiceI;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
-public class UserServiceImpl implements UserServiceI{
+@Slf4j
+public class UserServiceImpl implements UserServiceI {
 
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private ModelMapper modelMapper;
-	
-	//TO CREATE
+
+	// TO CREATE
 	@Override
 	public UserDto createUser(UserDto userDto) {
+		log.info("Initiating the service layer to create a User");
 		User toUser = this.dtoToUser(userDto);
 		User savedUser = this.userRepository.save(toUser);
 		UserDto toUserDto = this.userToDto(savedUser);
+		log.info("Completed the service layer to create a User");
 		return toUserDto;
 	}
 
 	@Override
 	public UserDto getUserById(Integer userId) {
-		User user = this.userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User", "userId", userId));
-		
+		log.info("Initiating the service layer to get a user of userId: {}", userId);
+		User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "userId", userId));
+		log.info("Completed the service layer to get a User of userId: {}", userId);
 		return this.userToDto(user);
 	}
 
-	//TO UPDATE BY ID
-	
+	// TO UPDATE BY ID
+
 	@Override
 	public UserDto updateUserById(UserDto userDto, Integer userId) {
-		 User user = this.userRepository.findById(userId)
-		           .orElseThrow(() -> new ResourceNotFoundException("user", "userId", userId));
+		log.info("Initiating the service layer to update the user of userId: {}", userId);
+		User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("user", "userId", userId));
 
-		   // User user = optionalUser.get(); // extract the user from the Optional
+		// User user = optionalUser.get(); // extract the user from the Optional
 
-		    // update the user properties from the userDto
-		    user.setUserName(userDto.getUserName());
-			user.setEmail(userDto.getEmail());
-			user.setPassword(userDto.getPassword());
-			user.setAbout(userDto.getAbout());
-			
+		// update the user properties from the userDto
+		user.setUserName(userDto.getUserName());
+		user.setEmail(userDto.getEmail());
+		user.setPassword(userDto.getPassword());
+		user.setAbout(userDto.getAbout());
 
-		    // save the updated user
-		    User updatedUser = this.userRepository.save(user);
+		// save the updated user
+		User updatedUser = this.userRepository.save(user);
 
-		    // convert the updated user to a UserDto
-		    UserDto toUserDto = this.userToDto(updatedUser);
-
-		    return toUserDto;
+		// convert the updated user to a UserDto
+		UserDto toUserDto = this.userToDto(updatedUser);
+		log.info("Completed the service layer to update the user of userId: {}", userId);
+		return toUserDto;
 	}
 
 	@Override
 	public List<UserDto> getAllUsers() {
-
+		log.info("Initiating the service layer to  user of get all Users");
 		List<User> users = this.userRepository.findAll();
 		List<UserDto> list = users.stream().map(user -> this.userToDto(user)).collect(Collectors.toList());
+		log.info("Completed the service layer to get all Users");
 		return list;
 	}
 
-	
 	@Override
 	public void deleteUserById(Integer userId) {
-		User user = this.userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("User", "userId", userId));
+		log.info("Initiating the service layer to delete a user of userId: {}", userId);
+		User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "userId", userId));
+		log.info("Completed the service layer to delete a User of userId: {}", userId);
 		this.userRepository.delete(user);
 	}
 
-	private User dtoToUser(UserDto userDto) {	
+	private User dtoToUser(UserDto userDto) {
 //		User user= new User();
 //		user.setUserId(userDto.getUserId());
 //		user.setUserName(userDto.getUserName());
@@ -86,11 +96,11 @@ public class UserServiceImpl implements UserServiceI{
 //		user.setPassword(userDto.getPassword());
 //		user.setAbout(userDto.getAbout());
 //		return user;	
-	//OR	
+		// OR
 		User user = this.modelMapper.map(userDto, User.class);
 		return user;
 	}
-	
+
 	private UserDto userToDto(User user) {
 //		UserDto userDto = new UserDto();
 //		userDto.setUserId(user.getUserId());
@@ -99,9 +109,9 @@ public class UserServiceImpl implements UserServiceI{
 //		userDto.setPassword(user.getPassword());
 //		userDto.setAbout(user.getAbout());
 //		return userDto;	
-	//OR	
+		// OR
 		UserDto userDto = this.modelMapper.map(user, UserDto.class);
 		return userDto;
 	}
-	
+
 }
