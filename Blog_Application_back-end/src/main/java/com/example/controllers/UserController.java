@@ -24,9 +24,9 @@ import com.example.services.UserServiceI;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/api/users")
 @Validated
 @Slf4j
+@RequestMapping("/api/users")
 public class UserController {
 
 	@Autowired

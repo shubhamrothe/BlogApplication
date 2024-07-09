@@ -2,9 +2,12 @@ package com.example.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
+@Validated
 @RequestMapping("/api")
 public class PostController {
 
@@ -30,7 +34,7 @@ public class PostController {
 
 	// create
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
-	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto, @PathVariable Integer userId,
+	public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto, @PathVariable Integer userId,
 			@PathVariable Integer categoryId) {
 		log.info("Requesting to create a Post");
 		PostDto createPost = this.postServiceI.createPost(postDto, userId, categoryId);
@@ -40,7 +44,7 @@ public class PostController {
 
 	// update post by Id
 	@PutMapping("/posts/{postId}")
-	public ResponseEntity<PostDto> updatePostById(@RequestBody PostDto postDto, @PathVariable Integer postId) {
+	public ResponseEntity<PostDto> updatePostById(@Valid @RequestBody PostDto postDto, @PathVariable Integer postId) {
 		log.info("Requesting to update a Post by postId: {}", postId);
 		PostDto updatePostDto = this.postServiceI.updatePostById(postDto, postId);
 		log.info("Completed the request to delete a Post by postId: {}", postId);
