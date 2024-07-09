@@ -46,7 +46,7 @@ public class CategoryController {
 		log.info("Requesting to update a Category of categoryId: {}" + categoryId);
 		CategoryDto updateCategoryById = this.categoryServiceI.updateCategoryById(categoryDto, categoryId);
 		log.info("Complete the request to update a Category of categoryId: {}" + categoryId);
-		return new ResponseEntity<CategoryDto>(updateCategoryById, HttpStatus.OK);
+		return new ResponseEntity<CategoryDto>(updateCategoryById, HttpStatus.CREATED);
 	}
 
 	// DELETEById

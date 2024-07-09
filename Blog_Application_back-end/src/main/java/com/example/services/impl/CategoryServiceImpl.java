@@ -28,43 +28,43 @@ public class CategoryServiceImpl implements CategoryServiceI {
 	// CREATE
 	@Override
 	public CategoryDto createCategory(CategoryDto categoryDto) {
-		log.info("Initiating the service layer to create a Category");
+		log.info("Initiating the dao call to create a Category");
 		Category category = this.modelMapper.map(categoryDto, Category.class);
 		Category saved = this.categoryRepository.save(category);
-		log.info("Completed the service layer to create a Category");
+		log.info("Completed the dao call to create a Category");
 		return this.modelMapper.map(saved, CategoryDto.class);
 	}
 
 	// UPDATE
 	@Override
 	public CategoryDto updateCategoryById(CategoryDto categoryDto, Integer categoryId) {
-		log.info("Initiating the service layer to update a Category of categoryId: {}", categoryId);
+		log.info("Initiating the dao call to update a Category of categoryId: {}", categoryId);
 		Category category = this.categoryRepository.findById(categoryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 		category.setCategoryTitle(categoryDto.getCategoryTitle());
 		category.setCategoryDescription(categoryDto.getCategoryDescription());
 		Category updatedCategory = this.categoryRepository.save(category);
-		log.info("Completed the service layer to update a Category of categoryId: {}", categoryId);
+		log.info("Completed the dao call to update a Category of categoryId: {}", categoryId);
 		return this.modelMapper.map(updatedCategory, CategoryDto.class);
 	}
 
 	// DELETE
 	@Override
 	public void deleteCategoryById(Integer categoryId) {
-		log.info("Initiating the service layer to delete a Category of categoryId: {}", categoryId);
+		log.info("Initiating the dao call to delete a Category of categoryId: {}", categoryId);
 		Category category = this.categoryRepository.findById(categoryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
-		log.info("Completed the service layer to delete a Category of categoryId: {}", categoryId);
+		log.info("Completed the dao call to delete a Category of categoryId: {}", categoryId);
 		this.categoryRepository.delete(category);
 	}
 
 	// GETById
 	@Override
 	public CategoryDto getCategoryById(Integer categoryId) {
-		log.info("Initiating the service layer to get a Category of categoryId: {}", categoryId);
+		log.info("Initiating the dao call to get a Category of categoryId: {}", categoryId);
 		Category category = this.categoryRepository.findById(categoryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
-		log.info("Completed the service layer to get a Category of categoryId: {}", categoryId);
+		log.info("Completed the dao call to get a Category of categoryId: {}", categoryId);
 		return this.modelMapper.map(category, CategoryDto.class);
 	}
 
@@ -72,12 +72,12 @@ public class CategoryServiceImpl implements CategoryServiceI {
 	// @SuppressWarnings("unchecked")
 	@Override
 	public List<CategoryDto> getAllCategory() {
-		log.info("Initiating the service layer to get all Categories");
+		log.info("Initiating the dao call to get all Categories");
 		List<Category> catagories = this.categoryRepository.findAll();
 		// return (List<CategoryDto>) this.modelMapper.map(findAll, CategoryDto.class);
 		List<CategoryDto> listOfCatDto = catagories.stream().map((cat) -> this.modelMapper.map(cat, CategoryDto.class))
 				.collect(Collectors.toList());
-		log.info("Completed the service layer to get a Categories");
+		log.info("Completed the dao call to get a Categories");
 		return listOfCatDto;
 	}
 

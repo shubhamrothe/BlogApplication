@@ -2,9 +2,6 @@ package com.example.payloads;
 
 import java.util.Date;
 
-import com.example.entities.Category;
-import com.example.entities.User;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

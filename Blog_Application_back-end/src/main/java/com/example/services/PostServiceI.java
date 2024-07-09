@@ -2,7 +2,6 @@ package com.example.services;
 
 import java.util.List;
 
-import com.example.entities.Post;
 import com.example.payloads.PostDto;
 
 public interface PostServiceI {
@@ -13,14 +12,14 @@ public interface PostServiceI {
 	//UPDATE
 	PostDto updatePostById(PostDto postDto, Integer postId);
 	
-	//DELETE
-	void deletePostById(Integer postId);
-	
 	//GET ALL
 	List<PostDto> getAllPost();
 	
 	//GET
 	PostDto getPostById(Integer postId);
+	
+	//DELETE
+	void deletePostById(Integer postId);
 	
 	//GET ALL POST BY CATEGORY
 	List<PostDto> getPostsByCategory(Integer categoryId);

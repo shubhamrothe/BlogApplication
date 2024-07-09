@@ -18,25 +18,26 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+//@ToString
 @Entity
 @Table(name="user_details")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer userId;
 	
 	@Column(name="user_name")
 	private String userName;
-	
+	@Column(name="email")
 	private String email;
+	@Column(name="password")
 	private String password;
+	@Column(name="about")
 	private String about;
 
 	@OneToMany(mappedBy ="user", cascade=CascadeType.ALL, fetch= FetchType.LAZY)
