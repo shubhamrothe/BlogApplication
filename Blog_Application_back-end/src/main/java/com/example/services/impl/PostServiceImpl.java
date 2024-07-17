@@ -6,6 +6,9 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.entities.Category;
@@ -13,6 +16,7 @@ import com.example.entities.Post;
 import com.example.entities.User;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.PostDto;
+import com.example.payloads.PostResponse;
 import com.example.repositories.CategoryRepository;
 import com.example.repositories.PostRepository;
 import com.example.repositories.UserRepository;
@@ -67,13 +71,31 @@ public class PostServiceImpl implements PostServiceI {
 	}
 
 	@Override
-	public List<PostDto> getAllPost() {
+	public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
+		
 		log.info("Initiating the dao call to get all posts");
-		List<Post> listOfPosts = this.postRepository.findAll();
-		List<PostDto> listOfPostDto = listOfPosts.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
-				.collect(Collectors.toList());
+		//using pagination
+//		int pageSize=2;
+//		int pageNumber=1;
+		Pageable p= PageRequest.of(pageNumber, pageSize);
+		Page<Post> pagePost = this.postRepository.findAll(p);
+		List<Post> allPosts = pagePost.getContent();
+		List<PostDto> listOfPostDto = allPosts.stream().map((post)->this.modelMapper.map(post, PostDto.class))
+		.collect(Collectors.toList());
+		
+//		List<Post> listOfPosts = this.postRepository.findAll();
+//		List<PostDto> listOfPostDto = listOfPosts.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
+//				.collect(Collectors.toList());	
+//		return listOfPostDto;
+		PostResponse postResponse = new PostResponse();
+		postResponse.setContent(listOfPostDto);
+		postResponse.setPageNumber(pagePost.getNumber());
+		postResponse.setPageSize(pagePost.getSize());
+		postResponse.setTotalElements(pagePost.getTotalElements());
+		postResponse.setTotalPages(pagePost.getTotalPages());
+		postResponse.setLastPage(pagePost.isLast());
 		log.info("Completed the dao call to get all Posts");
-		return listOfPostDto;
+		return postResponse;
 	}
 
 	@Override

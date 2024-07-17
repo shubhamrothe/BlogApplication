@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.payloads.ApiResponse;
 import com.example.payloads.PostDto;
+import com.example.payloads.PostResponse;
 import com.example.services.PostServiceI;
 
 import lombok.extern.slf4j.Slf4j;
@@ -53,11 +55,13 @@ public class PostController {
 
 	// get All posts
 	@GetMapping("/posts")
-	public ResponseEntity<List<PostDto>> getAllPost() {
+	public ResponseEntity<PostResponse> getAllPost(
+			@RequestParam(value="pageNumber",defaultValue="0", required =false ) Integer pageNumber,
+			@RequestParam(value="pageSize",defaultValue ="2", required= false) Integer pageSize) {
 		log.info("Requesting to get all Posts");
-		List<PostDto> allPost = this.postServiceI.getAllPost();
+		PostResponse postResponse = this.postServiceI.getAllPost(pageNumber, pageSize);
 		log.info("Completed the request to  get all Posts");
-		return new ResponseEntity<List<PostDto>>(allPost, HttpStatus.OK);
+		return new ResponseEntity<PostResponse>(postResponse, HttpStatus.OK);
 	}
 
 	// get posts by Id

@@ -3,6 +3,7 @@ package com.example.services;
 import java.util.List;
 
 import com.example.payloads.PostDto;
+import com.example.payloads.PostResponse;
 
 public interface PostServiceI {
 
@@ -13,7 +14,8 @@ public interface PostServiceI {
 	PostDto updatePostById(PostDto postDto, Integer postId);
 	
 	//GET ALL
-	List<PostDto> getAllPost();
+	//List<PostDto>
+	PostResponse getAllPost(Integer pageNumber, Integer pageSize);
 	
 	//GET
 	PostDto getPostById(Integer postId);
