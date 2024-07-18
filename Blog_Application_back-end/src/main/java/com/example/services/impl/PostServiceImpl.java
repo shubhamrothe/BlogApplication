@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.entities.Category;
@@ -39,7 +40,7 @@ public class PostServiceImpl implements PostServiceI {
 
 	@Override
 	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId) {
-		log.info("Initiating the dao call to create a Post");
+		log.info("Initiating the dao call to create a Post for user of userId: {} and for category of categoryId: {}", userId, categoryId);
 		// to fetch user
 		User user = this.userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "userId", userId));
@@ -54,7 +55,7 @@ public class PostServiceImpl implements PostServiceI {
 		post.setCategory(category);
 
 		Post newPost = this.postRepository.save(post);
-		log.info("Completed the dao call to create a Post");
+		log.info("Completed the dao call to create a Post for user of userId: {} and for category of categoryId: {}", userId, categoryId);
 		return this.modelMapper.map(newPost, PostDto.class);
 	}
 
@@ -71,18 +72,17 @@ public class PostServiceImpl implements PostServiceI {
 	}
 
 	@Override
-	public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
+	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDirection) {
 		
-		log.info("Initiating the dao call to get all posts");
-		//using pagination
-//		int pageSize=2;
-//		int pageNumber=1;
-		Pageable p= PageRequest.of(pageNumber, pageSize);
+		log.info("Initiating the dao call to get all Posts of pageNumber: {} and sortBy: {} in direction: {}", pageNumber,sortBy, sortDirection );
+		Sort sort=(sortDirection.equalsIgnoreCase("asc"))?sort=Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
+		
+		Pageable p= PageRequest.of(pageNumber, pageSize, sort);
 		Page<Post> pagePost = this.postRepository.findAll(p);
 		List<Post> allPosts = pagePost.getContent();
 		List<PostDto> listOfPostDto = allPosts.stream().map((post)->this.modelMapper.map(post, PostDto.class))
 		.collect(Collectors.toList());
-		
+		//without pagination
 //		List<Post> listOfPosts = this.postRepository.findAll();
 //		List<PostDto> listOfPostDto = listOfPosts.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
 //				.collect(Collectors.toList());	
@@ -94,7 +94,7 @@ public class PostServiceImpl implements PostServiceI {
 		postResponse.setTotalElements(pagePost.getTotalElements());
 		postResponse.setTotalPages(pagePost.getTotalPages());
 		postResponse.setLastPage(pagePost.isLast());
-		log.info("Completed the dao call to get all Posts");
+		log.info("Completed the dao call to get all Posts of pageNumber: {} and sortBy: {} in direction: {}", pageNumber, sortBy, sortDirection);
 		return postResponse;
 	}
 

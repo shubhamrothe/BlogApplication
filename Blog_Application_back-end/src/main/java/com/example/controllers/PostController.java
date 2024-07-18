@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
-@Validated
+//@Validated
 @RequestMapping("/api")
 public class PostController {
 
@@ -38,9 +38,9 @@ public class PostController {
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto, @PathVariable Integer userId,
 			@PathVariable Integer categoryId) {
-		log.info("Requesting to create a Post");
+		log.info("Requesting to create a Post for a user of userId: {}", userId);
 		PostDto createPost = this.postServiceI.createPost(postDto, userId, categoryId);
-		log.info("Completed the request to create a Post");
+		log.info("Completed the request to create a Post for a user of userId: {}", userId);
 		return new ResponseEntity<PostDto>(createPost, HttpStatus.CREATED);
 	}
 
@@ -57,10 +57,12 @@ public class PostController {
 	@GetMapping("/posts")
 	public ResponseEntity<PostResponse> getAllPost(
 			@RequestParam(value="pageNumber",defaultValue="0", required =false ) Integer pageNumber,
-			@RequestParam(value="pageSize",defaultValue ="2", required= false) Integer pageSize) {
-		log.info("Requesting to get all Posts");
-		PostResponse postResponse = this.postServiceI.getAllPost(pageNumber, pageSize);
-		log.info("Completed the request to  get all Posts");
+			@RequestParam(value="pageSize",defaultValue ="2", required= false) Integer pageSize,
+			@RequestParam(value="sortBy",defaultValue="postId",required=false) String sortBy,
+			@RequestParam(value="sortDirection",defaultValue="asc",required=false) String sortDirection){
+		log.info("Requesting to get all Posts of pageNumber: {} and sortBy: {}", pageNumber, sortBy );
+		PostResponse postResponse = this.postServiceI.getAllPost(pageNumber, pageSize, sortBy, sortDirection);
+		log.info("Completed the request to  get all Posts of pageNumber: {} and sortBy: {}", pageNumber, sortBy );
 		return new ResponseEntity<PostResponse>(postResponse, HttpStatus.OK);
 	}
 
