@@ -1,0 +1,486 @@
+07.18. 11.01.09 [restartedMain] [INFO][INFO]07.18. 11.01.09 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.10 [restartedMain] [INFO][INFO]07.18. 11.01.11 [restartedMain] [INFO][INFO]07.18. 11.01.11 [restartedMain] [INFO][INFO]07.18. 11.01.12 [restartedMain] [INFO][INFO]07.18. 11.01.12 [restartedMain] [INFO][INFO]07.18. 11.01.12 [restartedMain] [WARN][WARN]07.18. 11.01.13 [restartedMain] [INFO][INFO]07.18. 11.01.13 [restartedMain] [INFO][INFO]07.18. 11.01.13 [restartedMain] [INFO][INFO]07.18. 11.01.13 [restartedMain] [INFO][INFO]07.18. 11.03.02 [File Watcher] [INFO][INFO]07.18. 11.03.03 [Thread-7] [INFO][INFO]07.18. 11.03.03 [Thread-7] [INFO][INFO]07.18. 11.03.03 [Thread-7] [INFO][INFO]07.18. 11.03.03 [Thread-7] [INFO][INFO]07.18. 11.03.03 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 11.03.03 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 11.03.04 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 11.03.04 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+07.18. 11.03.04 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 11.03.04 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 11.03.04 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 11.03.04 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 11.03.04 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 11.03.04 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 11.03.04 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 11.03.04 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 11.03.04 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1392 ms
+07.18. 11.03.04 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+07.18. 11.03.05 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+07.18. 11.03.05 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 11.03.05 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 11.03.05 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 11.03.06 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 11.03.06 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 11.03.07 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 11.03.07 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 11.03.07 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 11.03.07 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 4.614 seconds (JVM running for 1188.5)
+07.18. 11.03.07 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 11.03.58 [http-nio-8080-exec-2] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07.18. 11.03.58 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07.18. 11.03.58 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+07.18. 11.03.58 [http-nio-8080-exec-2] [INFO] c.example.controllers.UserController - Requesting to retrive all Users
+07.18. 11.03.58 [http-nio-8080-exec-2] [INFO] c.e.services.impl.UserServiceImpl - Initiating the dao call to  user of get all Users
+07.18. 11.03.59 [http-nio-8080-exec-2] [INFO] c.e.services.impl.UserServiceImpl - Completed the dao call to get all Users
+07.18. 11.03.59 [http-nio-8080-exec-2] [INFO] c.example.controllers.UserController - Completed the request to get all Users
+07.18. 11.35.59 [HikariPool-3 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=30m24s359ms367µs900ns).
+07.18. 11.39.46 [http-nio-8080-exec-5] [INFO] c.example.controllers.PostController - Requesting to get all Posts
+07.18. 11.39.46 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get all posts
+07.18. 11.39.55 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get all Posts
+07.18. 11.39.55 [http-nio-8080-exec-5] [INFO] c.example.controllers.PostController - Completed the request to  get all Posts
+07.18. 11.55.24 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+07.18. 11.55.25 [Thread-11] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 11.55.25 [Thread-11] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+07.18. 11.55.25 [Thread-11] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 11.55.25 [Thread-11] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+07.18. 11.55.25 [Thread-11] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+07.18. 11.55.25 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 11.55.25 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 11.55.26 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 11.55.26 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+07.18. 11.55.26 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 11.55.26 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 11.55.26 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 11.55.26 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 11.55.26 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 11.55.26 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 11.55.26 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 11.55.26 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 11.55.26 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 920 ms
+07.18. 11.55.26 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+07.18. 11.55.26 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+07.18. 11.55.26 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 11.55.26 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 11.55.26 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 11.55.32 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 11.55.32 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 11.55.32 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 11.55.33 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 11.55.33 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 11.55.33 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 7.794 seconds (JVM running for 4333.807)
+07.18. 11.55.33 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.09.35 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+07.18. 12.09.35 [Thread-15] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.09.35 [Thread-15] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.09.35 [Thread-15] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+07.18. 12.09.35 [Thread-15] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+07.18. 12.09.35 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.09.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.09.37 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.09.37 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+07.18. 12.09.38 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.09.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.09.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.09.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.09.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.09.39 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.09.39 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.09.40 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.09.40 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3340 ms
+07.18. 12.09.40 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+07.18. 12.09.43 [restartedMain] [WARN] com.zaxxer.hikari.pool.PoolBase - HikariPool-5 - Default transaction isolation level detection failed (No operations allowed after connection closed.).
+07.18. 12.09.44 [restartedMain] [ERROR] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Error thrown while acquiring connection from data source
+java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setTransactionIsolation(ConnectionImpl.java:2253)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:419)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$logDataSources$1(H2ConsoleAutoConfiguration.java:86)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.logDataSources(H2ConsoleAutoConfiguration.java:92)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:68)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.withThreadContextClassLoader(H2ConsoleAutoConfiguration.java:77)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:430)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.BlogApplicationBackEndApplication.main(BlogApplicationBackEndApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:761)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:564)
+	at com.mysql.cj.jdbc.ConnectionImpl.setTransactionIsolation(ConnectionImpl.java:2200)
+	... 86 common frames omitted
+07.18. 12.09.44 [restartedMain] [ERROR] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Exception during pool initialization.
+java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setTransactionIsolation(ConnectionImpl.java:2253)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:419)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$logDataSources$1(H2ConsoleAutoConfiguration.java:86)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.logDataSources(H2ConsoleAutoConfiguration.java:92)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:68)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.withThreadContextClassLoader(H2ConsoleAutoConfiguration.java:77)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:430)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.BlogApplicationBackEndApplication.main(BlogApplicationBackEndApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:761)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:564)
+	at com.mysql.cj.jdbc.ConnectionImpl.setTransactionIsolation(ConnectionImpl.java:2200)
+	... 86 common frames omitted
+07.18. 12.09.44 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.09.44 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+07.18. 12.09.45 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+07.18. 12.09.45 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.09.51 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.09.51 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.09.51 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.09.51 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.10.01 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.10.01 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 26.161 seconds (JVM running for 5202.347)
+07.18. 12.10.01 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.10.58 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+07.18. 12.10.58 [Thread-19] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.10.58 [Thread-19] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.10.58 [Thread-19] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+07.18. 12.10.58 [Thread-19] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+07.18. 12.10.58 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.10.58 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.10.59 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.10.59 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 3 JPA repository interfaces.
+07.18. 12.10.59 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.10.59 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.10.59 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.10.59 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.10.59 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.10.59 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.10.59 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.11.00 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.11.00 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1186 ms
+07.18. 12.11.00 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+07.18. 12.11.00 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+07.18. 12.11.00 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 12.11.00 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.11.00 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.11.05 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.11.05 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.11.06 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.11.08 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.11.09 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.11.09 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 10.576 seconds (JVM running for 5269.857)
+07.18. 12.11.09 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.12.52 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+07.18. 12.12.52 [Thread-23] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.12.52 [Thread-23] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.12.52 [Thread-23] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+07.18. 12.12.52 [Thread-23] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+07.18. 12.12.54 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.12.54 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.12.54 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.12.55 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+07.18. 12.12.55 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.12.55 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.12.55 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.12.55 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.12.55 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.12.55 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.12.55 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.12.56 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.12.56 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2219 ms
+07.18. 12.12.56 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+07.18. 12.12.57 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+07.18. 12.12.57 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 12.12.57 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.12.57 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.13.08 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.13.11 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.13.12 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.13.13 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.13.13 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.13.13 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 21.075 seconds (JVM running for 5394.481)
+07.18. 12.13.13 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.17.29 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+07.18. 12.17.29 [Thread-27] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.17.29 [Thread-27] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.17.29 [Thread-27] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+07.18. 12.17.29 [Thread-27] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+07.18. 12.17.30 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.17.30 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.17.30 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.17.30 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+07.18. 12.17.30 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.17.30 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.17.30 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.17.30 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.17.30 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.17.30 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.17.30 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.17.30 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.17.30 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 634 ms
+07.18. 12.17.30 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+07.18. 12.17.30 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+07.18. 12.17.30 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 12.17.30 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.17.30 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.17.34 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.17.34 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.17.35 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.17.35 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.17.35 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.17.35 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 5.323 seconds (JVM running for 5655.909)
+07.18. 12.17.35 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.18.22 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+07.18. 12.18.22 [Thread-31] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.18.22 [Thread-31] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.18.22 [Thread-31] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+07.18. 12.18.22 [Thread-31] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+07.18. 12.18.22 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.18.22 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.18.23 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.18.23 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+07.18. 12.18.23 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.18.23 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.18.23 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.18.23 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.18.23 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.18.23 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.18.23 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.18.23 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.18.23 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 840 ms
+07.18. 12.18.23 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+07.18. 12.18.23 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+07.18. 12.18.23 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 12.18.23 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.18.23 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.18.24 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.18.24 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.18.25 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.18.25 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.18.25 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.18.25 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 2.791 seconds (JVM running for 5705.931)
+07.18. 12.18.25 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.19.47 [http-nio-8080-exec-2] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07.18. 12.19.47 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07.18. 12.19.47 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+07.18. 12.19.47 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Requesting to get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.19.47 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get all Posts of pageNumber: 1 and sortBy: asc
+07.18. 12.19.48 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.19.48 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Completed the request to  get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.21.43 [http-nio-8080-exec-5] [INFO] c.example.controllers.PostController - Requesting to get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.21.43 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get all Posts of pageNumber: 1 and sortBy: desc
+07.18. 12.21.43 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.21.43 [http-nio-8080-exec-5] [INFO] c.example.controllers.PostController - Completed the request to  get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.26.19 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+07.18. 12.26.19 [Thread-35] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.18. 12.26.19 [Thread-35] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+07.18. 12.26.19 [Thread-35] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.26.19 [Thread-35] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+07.18. 12.26.19 [Thread-35] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+07.18. 12.26.20 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 31548 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.18. 12.26.20 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.18. 12.26.20 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.18. 12.26.21 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+07.18. 12.26.21 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.18. 12.26.21 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.18. 12.26.21 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.18. 12.26.21 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.18. 12.26.21 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.18. 12.26.21 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.18. 12.26.21 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.18. 12.26.21 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.18. 12.26.21 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1042 ms
+07.18. 12.26.21 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+07.18. 12.26.22 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+07.18. 12.26.22 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.18. 12.26.22 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.18. 12.26.22 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.18. 12.26.32 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.18. 12.26.32 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.18. 12.26.32 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.18. 12.26.32 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.18. 12.26.36 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.18. 12.26.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 16.095 seconds (JVM running for 6196.92)
+07.18. 12.26.36 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Requesting to get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get all Posts of pageNumber: 1 and sortBy: postId in direction: asc
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get all Posts of pageNumber: 1 and sortBy: postId in direction: asc
+07.18. 12.29.48 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Completed the request to  get all Posts of pageNumber: 1 and sortBy: postId
+07.18. 14.05.03 [HikariPool-10 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Thread starvation or clock leap detected (housekeeper delta=1h19m11s354ms522µs200ns).
+07.18. 18.24.06 [HikariPool-10 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Thread starvation or clock leap detected (housekeeper delta=3h27s865ms40µs700ns).
