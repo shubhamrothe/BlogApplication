@@ -1940,3 +1940,291 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
 	... 38 common frames omitted
+08.09. 17.48.57 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 30372 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 17.48.57 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 17.48.58 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 17.48.58 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+08.09. 17.48.58 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 17.48.58 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 17.48.58 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 17.48.58 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 17.48.58 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 17.48.58 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 17.48.58 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 17.48.58 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 17.48.58 [restartedMain] [INFO] o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 17.48.58 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 630 ms
+08.09. 17.48.58 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+08.09. 17.48.58 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+08.09. 17.48.58 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 17.48.58 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 17.48.58 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 17.48.58 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 17.48.58 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 17.48.59 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 17.48.59 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 17.48.59 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 17.48.59 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 17.48.59 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 1.57 seconds (JVM running for 6041.524)
+08.09. 17.48.59 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+08.09. 18.19.22 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+08.09. 18.19.22 [Thread-49] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.22 [Thread-49] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 18.19.22 [Thread-49] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.22 [Thread-49] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.22 [Thread-49] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.19.22 [Thread-49] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+08.09. 18.19.22 [Thread-49] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+08.09. 18.19.23 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 30372 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 18.19.23 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 18.19.24 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 18.19.24 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 4 JPA repository interfaces.
+08.09. 18.19.25 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 18.19.25 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 18.19.25 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 18.19.25 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 18.19.25 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 18.19.25 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.25 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 18.19.25 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 18.19.25 [restartedMain] [INFO] o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 18.19.25 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2210 ms
+08.09. 18.19.25 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+08.09. 18.19.25 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+08.09. 18.19.25 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 18.19.25 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 18.19.25 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 18.19.30 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 18.19.30 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.19.30 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 18.19.31 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 18.19.31 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.31 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 18.19.31 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 8.567 seconds (JVM running for 7873.874)
+08.09. 18.19.31 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+08.09. 18.19.33 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 35 class path changes (35 additions, 0 deletions, 0 modifications)
+08.09. 18.19.33 [Thread-56] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.33 [Thread-56] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 18.19.33 [Thread-56] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.33 [Thread-56] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.33 [Thread-56] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.19.33 [Thread-56] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+08.09. 18.19.33 [Thread-56] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+08.09. 18.19.34 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 30372 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 18.19.34 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 18.19.35 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 18.19.35 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 4 JPA repository interfaces.
+08.09. 18.19.35 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 18.19.35 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 18.19.35 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 18.19.35 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 18.19.35 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 18.19.35 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.35 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 18.19.35 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 18.19.36 [restartedMain] [INFO] o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 18.19.36 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1720 ms
+08.09. 18.19.36 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Starting...
+08.09. 18.19.36 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Start completed.
+08.09. 18.19.36 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 18.19.36 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 18.19.36 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 18.19.36 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 18.19.36 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.19.37 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 18.19.37 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 18.19.37 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 18.19.37 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 18.19.37 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 3.667 seconds (JVM running for 7880.056)
+08.09. 18.19.37 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+08.09. 18.39.34 [HikariPool-16 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-16 - Thread starvation or clock leap detected (housekeeper delta=5m28s362ms198µs400ns).
+08.09. 18.43.29 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 38 class path changes (0 additions, 38 deletions, 0 modifications)
+08.09. 18.43.29 [Thread-60] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 18.43.29 [Thread-60] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 18.43.29 [Thread-60] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 18.43.29 [Thread-60] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 18.43.29 [Thread-60] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.43.29 [Thread-60] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown initiated...
+08.09. 18.43.29 [Thread-60] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown completed.
+08.09. 18.45.41 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 13764 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 18.45.41 [background-preinit] [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+08.09. 18.45.41 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 18.45.41 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08.09. 18.45.41 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08.09. 18.45.42 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 18.45.42 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 4 JPA repository interfaces.
+08.09. 18.45.44 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 18.45.44 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 18.45.44 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 18.45.44 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 18.45.44 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 18.45.44 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 18.45.44 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 18.45.44 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 18.45.44 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 18.45.44 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2919 ms
+08.09. 18.45.44 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+08.09. 18.45.45 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+08.09. 18.45.45 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 18.45.45 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 18.45.45 [restartedMain] [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+08.09. 18.45.45 [restartedMain] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08.09. 18.45.45 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 18.45.47 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 18.45.47 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.45.48 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 18.45.48 [restartedMain] [WARN] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 46d7ef8c-4938-4f44-8110-da81711d085a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+08.09. 18.45.48 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25d7c8a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6093861c, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d3a4995, org.springframework.security.web.header.HeaderWriterFilter@5b7a8fc7, org.springframework.security.web.csrf.CsrfFilter@2570098b, org.springframework.security.web.authentication.logout.LogoutFilter@1e571cb7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2eae3913, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@12fd07f2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3091e36d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d1b0349, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5cd90eef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d2d77da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4412cff6, org.springframework.security.web.session.SessionManagementFilter@31987e6b, org.springframework.security.web.access.ExceptionTranslationFilter@67037738, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@101d8c25]
+08.09. 18.45.48 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 18.45.48 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 18.45.49 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 18.45.49 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 8.363 seconds (JVM running for 10.195)
+08.09. 18.48.30 [http-nio-8080-exec-1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08.09. 18.48.30 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+08.09. 18.48.30 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+08.09. 18.48.52 [http-nio-8080-exec-4] [INFO] c.example.controllers.PostController - Requesting to get all Posts by postId: 5
+08.09. 18.48.52 [http-nio-8080-exec-4] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 5
+08.09. 18.48.53 [http-nio-8080-exec-4] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 5
+08.09. 18.48.53 [http-nio-8080-exec-4] [INFO] c.example.controllers.PostController - Completed the request to get all Posts by postId: 5
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+08.09. 18.52.23 [RMI TCP Connection(10)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+08.09. 18.52.36 [background-preinit] [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+08.09. 18.52.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 26036 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 18.52.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 18.52.36 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08.09. 18.52.36 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08.09. 18.52.38 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 18.52.38 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 4 JPA repository interfaces.
+08.09. 18.52.39 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 18.52.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 18.52.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 18.52.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 18.52.39 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 18.52.39 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 18.52.39 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 18.52.39 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 18.52.39 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 18.52.39 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2628 ms
+08.09. 18.52.39 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+08.09. 18.52.39 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+08.09. 18.52.39 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 18.52.40 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 18.52.40 [restartedMain] [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+08.09. 18.52.40 [restartedMain] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08.09. 18.52.40 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 18.52.42 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 18.52.42 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 18.52.42 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 18.52.43 [restartedMain] [WARN] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3c68f2fa-5a5e-499f-b1a0-b54591c8299f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+08.09. 18.52.43 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8b432c6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23a59813, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c593f50, org.springframework.security.web.header.HeaderWriterFilter@33dc8846, org.springframework.security.web.csrf.CsrfFilter@143d3b6a, org.springframework.security.web.authentication.logout.LogoutFilter@8a3853b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@234463a1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1e571cb7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@78d1b8a1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2fb09142, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12eb6d94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@149091c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ccd77bb, org.springframework.security.web.session.SessionManagementFilter@62309006, org.springframework.security.web.access.ExceptionTranslationFilter@374254e8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25d7c8a4]
+08.09. 18.52.43 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 18.52.43 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 18.52.43 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 18.52.43 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 7.534 seconds (JVM running for 9.016)
+08.09. 18.53.04 [http-nio-8080-exec-1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08.09. 18.53.04 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+08.09. 18.53.04 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+08.09. 18.53.20 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Requesting to get all Posts by postId: 5
+08.09. 18.53.20 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 5
+08.09. 18.53.20 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 5
+08.09. 18.53.20 [http-nio-8080-exec-2] [INFO] c.example.controllers.PostController - Completed the request to get all Posts by postId: 5
+08.09. 18.53.28 [http-nio-8080-exec-3] [INFO] c.example.controllers.PostController - Requesting to get all Posts by postId: 5
+08.09. 18.53.28 [http-nio-8080-exec-3] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 5
+08.09. 18.53.28 [http-nio-8080-exec-3] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 5
+08.09. 18.53.28 [http-nio-8080-exec-3] [INFO] c.example.controllers.PostController - Completed the request to get all Posts by postId: 5
+08.09. 18.53.29 [http-nio-8080-exec-4] [INFO] c.example.controllers.PostController - Requesting to get all Posts by postId: 5
+08.09. 18.53.29 [http-nio-8080-exec-4] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 5
+08.09. 18.53.29 [http-nio-8080-exec-4] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 5
+08.09. 18.53.29 [http-nio-8080-exec-4] [INFO] c.example.controllers.PostController - Completed the request to get all Posts by postId: 5
+08.09. 19.09.35 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+08.09. 19.09.35 [Thread-5] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 19.09.35 [Thread-5] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 19.09.35 [Thread-5] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+08.09. 19.09.35 [Thread-5] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 19.09.35 [Thread-5] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 19.09.35 [Thread-5] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 19.09.35 [Thread-5] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+08.09. 19.09.35 [Thread-5] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+08.09. 19.09.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 26036 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 19.09.36 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 19.09.36 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 19.09.37 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+08.09. 19.09.37 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 19.09.37 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 19.09.37 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 19.09.37 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 19.09.37 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 19.09.37 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 19.09.37 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 19.09.37 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 19.09.37 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 19.09.37 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1295 ms
+08.09. 19.09.37 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+08.09. 19.09.37 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+08.09. 19.09.37 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 19.09.37 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 19.09.37 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 19.09.38 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 19.09.38 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 19.09.38 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 19.09.38 [restartedMain] [DEBUG] o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+08.09. 19.09.38 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22e49a65, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@753677a1, org.springframework.security.web.context.SecurityContextPersistenceFilter@61ba8202, org.springframework.security.web.header.HeaderWriterFilter@746212ba, org.springframework.security.web.csrf.CsrfFilter@57f09525, org.springframework.security.web.authentication.logout.LogoutFilter@7d1a56b3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2025a3d9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@35a0e1d0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@788029b5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7b7e8b7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60b46e66, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4274708, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77aa408d, org.springframework.security.web.session.SessionManagementFilter@323060dc, org.springframework.security.web.access.ExceptionTranslationFilter@15f29fac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41e2ccf4]
+08.09. 19.09.38 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 19.09.38 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 19.09.38 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 19.09.38 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 2.651 seconds (JVM running for 1024.046)
+08.09. 19.09.38 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+08.09. 19.13.05 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+08.09. 19.13.05 [Thread-7] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+08.09. 19.13.05 [Thread-7] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08.09. 19.13.05 [Thread-7] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+08.09. 19.13.05 [Thread-7] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+08.09. 19.13.05 [Thread-7] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08.09. 19.13.05 [Thread-7] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+08.09. 19.13.05 [Thread-7] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+08.09. 19.13.05 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 26036 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+08.09. 19.13.05 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+08.09. 19.13.06 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08.09. 19.13.06 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+08.09. 19.13.06 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08.09. 19.13.06 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+08.09. 19.13.06 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+08.09. 19.13.06 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08.09. 19.13.06 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+08.09. 19.13.06 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08.09. 19.13.06 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+08.09. 19.13.06 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+08.09. 19.13.06 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08.09. 19.13.06 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 764 ms
+08.09. 19.13.06 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+08.09. 19.13.06 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+08.09. 19.13.06 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+08.09. 19.13.06 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08.09. 19.13.06 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08.09. 19.13.07 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08.09. 19.13.07 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08.09. 19.13.07 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08.09. 19.13.07 [restartedMain] [DEBUG] o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+08.09. 19.13.07 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28b36a65, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22452b9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b3ad553, org.springframework.security.web.header.HeaderWriterFilter@5c16e1bb, org.springframework.security.web.csrf.CsrfFilter@676d51f5, org.springframework.security.web.authentication.logout.LogoutFilter@4603cead, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@65ab412b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@78249f9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1dd894e1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@c468a74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64fb0572, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f8b3b6f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2575a804, org.springframework.security.web.session.SessionManagementFilter@26d5ca85, org.springframework.security.web.access.ExceptionTranslationFilter@5e92339d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b3a28c0]
+08.09. 19.13.07 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08.09. 19.13.07 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08.09. 19.13.07 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08.09. 19.13.07 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 1.952 seconds (JVM running for 1232.877)
+08.09. 19.13.07 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
