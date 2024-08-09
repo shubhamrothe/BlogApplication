@@ -1,0 +1,323 @@
+07.29. 10.11.32 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 17520 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.29. 10.11.32 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.29. 10.11.32 [background-preinit] [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+07.29. 10.11.32 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+07.29. 10.11.32 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+07.29. 10.11.36 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.29. 10.11.36 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 176 ms. Found 3 JPA repository interfaces.
+07.29. 10.11.40 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.29. 10.11.40 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.29. 10.11.40 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.29. 10.11.40 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.29. 10.11.40 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.29. 10.11.40 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+07.29. 10.11.40 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.29. 10.11.40 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.29. 10.11.41 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.29. 10.11.41 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8509 ms
+07.29. 10.11.41 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07.29. 10.11.43 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07.29. 10.11.43 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.29. 10.11.44 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.29. 10.11.45 [restartedMain] [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+07.29. 10.11.46 [restartedMain] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+07.29. 10.11.46 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.29. 10.11.49 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.29. 10.11.49 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.29. 10.11.50 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.29. 10.11.51 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.29. 10.11.51 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+07.29. 10.11.51 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.29. 10.11.51 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 21.126 seconds (JVM running for 24.269)
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 6
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 6
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to update a Post of postId: 6
+07.29. 10.13.46 [http-nio-8080-exec-2] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to update a Post of postId: 6
+07.29. 10.24.14 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 6
+07.29. 10.24.14 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 6
+07.29. 10.24.14 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to update a Post of postId: 6
+07.29. 10.24.14 [http-nio-8080-exec-5] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to update a Post of postId: 6
+07.29. 10.24.14 [http-nio-8080-exec-5] [WARN] o.s.w.m.s.StandardServletMultipartResolver - Failed to perform cleanup of multipart items
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.cleanupMultipart(StandardServletMultipartResolver.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.cleanupMultipart(DispatcherServlet.java:1250)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1107)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	... 44 common frames omitted
+07.29. 10.24.14 [http-nio-8080-exec-5] [ERROR] o.a.coyote.http11.Http11Processor - Error processing request
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:441)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	... 13 common frames omitted
+07.29. 10.24.14 [http-nio-8080-exec-5] [ERROR] o.a.coyote.http11.Http11NioProtocol - Error reading request, ignored
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:515)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:429)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	... 13 common frames omitted
+07.29. 10.24.14 [http-nio-8080-exec-5] [ERROR] o.apache.tomcat.util.net.NioEndpoint - Error running socket processor
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:515)
+	at org.apache.catalina.connector.CoyoteAdapter.checkRecycled(CoyoteAdapter.java:539)
+	at org.apache.coyote.http11.Http11Processor.recycle(Http11Processor.java:1439)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.release(AbstractProtocol.java:1098)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1056)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.8280620094032334110\work\Tomcat\localhost\ROOT\upload_11ff4232_6466_4269_a344_7da76692989a_00000001.tmp
+	... 14 common frames omitted
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+07.29. 10.31.22 [RMI TCP Connection(32)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+07.29. 10.33.19 [main] [INFO] o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.BlogApplicationBackEndApplicationTests], using SpringBootContextLoader
+07.29. 10.33.19 [main] [INFO] o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.BlogApplicationBackEndApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+07.29. 10.33.19 [main] [INFO] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.BlogApplicationBackEndApplicationTests]: BlogApplicationBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07.29. 10.33.20 [main] [INFO] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.BlogApplicationBackEndApplication for test class com.example.BlogApplicationBackEndApplicationTests
+07.29. 10.33.20 [main] [INFO] o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+07.29. 10.33.20 [main] [INFO] o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5fd62371, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@28a0fd6c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2b62442c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@66629f63, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextTestExecutionListener@27a5328c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1e5f4170, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6c345c5f, org.springframework.test.context.event.EventPublishingTestExecutionListener@6b5966e1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@65e61854, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1568159, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4fcee388, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@f9879ac]
+07.29. 10.33.21 [main] [INFO] c.e.BlogApplicationBackEndApplicationTests - Starting BlogApplicationBackEndApplicationTests using Java 17.0.7 on DESKTOP-2A0C7II with PID 17732 (started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.29. 10.33.21 [main] [INFO] c.e.BlogApplicationBackEndApplicationTests - No active profile set, falling back to 1 default profile: "default"
+07.29. 10.33.21 [background-preinit] [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+07.29. 10.33.23 [main] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.29. 10.33.24 [main] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 223 ms. Found 3 JPA repository interfaces.
+07.29. 10.33.25 [main] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.29. 10.33.25 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+07.29. 10.33.26 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+07.29. 10.33.26 [main] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07.29. 10.33.27 [main] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07.29. 10.33.27 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.29. 10.33.29 [main] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.29. 10.33.29 [main] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.29. 10.33.31 [main] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.29. 10.33.33 [main] [INFO] c.e.BlogApplicationBackEndApplicationTests - Started BlogApplicationBackEndApplicationTests in 12.304 seconds (JVM running for 15.547)
+07.29. 10.33.33 [SpringApplicationShutdownHook] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.29. 10.33.33 [SpringApplicationShutdownHook] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+07.29. 10.33.33 [SpringApplicationShutdownHook] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+07.29. 11.00.58 [background-preinit] [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+07.29. 11.00.58 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Starting BlogApplicationBackEndApplication using Java 17.0.7 on DESKTOP-2A0C7II with PID 1444 (C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end\target\classes started by Shubham in C:\Users\Shubham\git\BlogApplication\Blog_Application_back-end)
+07.29. 11.00.58 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+07.29. 11.00.58 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+07.29. 11.00.58 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+07.29. 11.00.59 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07.29. 11.00.59 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+07.29. 11.01.00 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07.29. 11.01.00 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.2].
+07.29. 11.01.00 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07.29. 11.01.00 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07.29. 11.01.00 [restartedMain] [INFO] o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.8 7 Feb 2023]
+07.29. 11.01.00 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+07.29. 11.01.00 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+07.29. 11.01.00 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+07.29. 11.01.00 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07.29. 11.01.00 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2306 ms
+07.29. 11.01.00 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07.29. 11.01.01 [restartedMain] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07.29. 11.01.01 [restartedMain] [INFO] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog_application'
+07.29. 11.01.01 [restartedMain] [INFO] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07.29. 11.01.01 [restartedMain] [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+07.29. 11.01.01 [restartedMain] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+07.29. 11.01.02 [restartedMain] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07.29. 11.01.03 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07.29. 11.01.03 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07.29. 11.01.04 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07.29. 11.01.05 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+07.29. 11.01.05 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+07.29. 11.01.05 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07.29. 11.01.05 [restartedMain] [INFO] c.e.BlogApplicationBackEndApplication - Started BlogApplicationBackEndApplication in 7.715 seconds (JVM running for 9.102)
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to get a Post of postId: 2
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to get a Post of postId: 2
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] c.e.services.impl.PostServiceImpl - Initiating the dao call to update a Post of postId: 2
+07.29. 11.01.29 [http-nio-8080-exec-1] [INFO] c.e.services.impl.PostServiceImpl - Completed the dao call to update a Post of postId: 2
+07.29. 11.01.29 [http-nio-8080-exec-1] [WARN] o.s.w.m.s.StandardServletMultipartResolver - Failed to perform cleanup of multipart items
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.cleanupMultipart(StandardServletMultipartResolver.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.cleanupMultipart(DispatcherServlet.java:1250)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1107)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	... 44 common frames omitted
+07.29. 11.01.29 [http-nio-8080-exec-1] [ERROR] o.a.coyote.http11.Http11Processor - Error processing request
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:441)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	... 13 common frames omitted
+07.29. 11.01.29 [http-nio-8080-exec-1] [ERROR] o.a.coyote.http11.Http11NioProtocol - Error reading request, ignored
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:515)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:429)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	... 13 common frames omitted
+07.29. 11.01.29 [http-nio-8080-exec-1] [ERROR] o.apache.tomcat.util.net.NioEndpoint - Error running socket processor
+java.io.UncheckedIOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.delete(DiskFileItem.java:431)
+	at org.apache.catalina.core.ApplicationPart.delete(ApplicationPart.java:54)
+	at org.apache.catalina.connector.Request.recycle(Request.java:483)
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:515)
+	at org.apache.catalina.connector.CoyoteAdapter.checkRecycled(CoyoteAdapter.java:539)
+	at org.apache.coyote.http11.Http11Processor.recycle(Http11Processor.java:1439)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.release(AbstractProtocol.java:1098)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1056)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Cannot delete C:\Users\Shubham\AppData\Local\Temp\tomcat.8080.12149090398418306672\work\Tomcat\localhost\ROOT\upload_47dc3128_75f3_4a1b_a484_e2609df813b8_00000000.tmp
+	... 14 common frames omitted
+07.29. 13.34.15 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m42s347ms576µs900ns).
+07.29. 13.51.39 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+07.29. 13.51.45 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+07.29. 13.51.45 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+07.29. 13.51.45 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+07.29. 13.51.46 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+07.29. 13.51.46 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+07.29. 13.51.47 [RMI TCP Connection(149)-127.0.0.1] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07.29. 13.51.48 [RMI TCP Connection(149)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+07.29. 13.51.48 [RMI TCP Connection(149)-127.0.0.1] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

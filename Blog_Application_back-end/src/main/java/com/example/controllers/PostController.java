@@ -1,10 +1,12 @@
 package com.example.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,11 +18,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.configuration.AppConstants;
 import com.example.payloads.ApiResponse;
 import com.example.payloads.PostDto;
 import com.example.payloads.PostResponse;
+import com.example.services.FileServiceI;
 import com.example.services.PostServiceI;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +37,12 @@ public class PostController {
 
 	@Autowired
 	private PostServiceI postServiceI;
+	
+	@Autowired
+	private FileServiceI fileServiceI;
+	
+	@Value("${project.image}")
+	private String path; 
 
 	// create
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
@@ -106,7 +116,19 @@ public class PostController {
 	@GetMapping("/posts/search/{keywords}")
 	public ResponseEntity<List<PostDto>> searchPostByTitle(@PathVariable("keywords")  String keywords){
 		List<PostDto> posts = this.postServiceI.searchPosts(keywords);
-		return new ResponseEntity<List<PostDto>>(posts, HttpStatus.OK);
-		
+		return new ResponseEntity<List<PostDto>>(posts, HttpStatus.OK);	
 	}
+	
+	//post image upload
+//	@PostMapping("/post/image/upload/{postId}")
+//	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
+//			@PathVariable Integer postId) throws IOException{
+//		
+//		PostDto postDto = this.postServiceI.getPostById(postId);
+//		
+//		String fileName = this.fileServiceI.uploadImage(path, image);
+//		postDto.setImageName(fileName);
+//		PostDto updatePostById = this.postServiceI.updatePostById(postDto, postId);
+//	return new ResponseEntity<PostDto>(updatePostById, HttpStatus.OK);
+//	}
 }
