@@ -2,6 +2,7 @@ package com.example.payloads;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +22,8 @@ public class CategoryDto {
 	@NotEmpty
 	@Size(min=15, message="Category description must be of minimum 15 charactues !!")
 	private String categoryDescription;
+	private String createdBy;
+	private String modifiedBy;
+	private Date createdAt;
+	private Date modifiedAt;
 }

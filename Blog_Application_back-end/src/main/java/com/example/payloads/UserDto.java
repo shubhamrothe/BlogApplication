@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,5 +30,9 @@ public class UserDto {
 	private String password;
 	@NotEmpty
 	private String about;
+	private String createdBy;
+	private String modifiedBy;
+	private Date createdAt;
+	private Date modifiedAt;
 	//
 }

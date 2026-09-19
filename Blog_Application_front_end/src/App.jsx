@@ -313,7 +313,7 @@ function CategoriesPage() {
   useEffect(() => {
     apiRequest('/categories').then(setCategories).catch(console.error).finally(() => setLoading(false));
   }, []);
-  return <div className="page"><h1 className="page-title">Categories</h1><div className="card">{loading ? 'Loading categories...' : <ul>{categories.length === 0 ? <li>No categories available.</li> : categories.map((cat) => <li key={cat.categoryId}>{cat.categoryTitle}</li>)}</ul>}</div></div>;
+  return <div className="page"><h1 className="page-title">Categories</h1><div className="card">{loading ? 'Loading categories...' : <ul>{categories.length === 0 ? <li>No categories available.</li> : categories.map((cat) => <li key={cat.categoryId}><strong>{cat.categoryTitle}</strong><span className="story-meta"> · Created by {cat.createdBy || 'Unknown'} · {formatAuditDate(cat.createdAt)}</span>{cat.modifiedAt && <span className="story-meta"> · Modified by {cat.modifiedBy || 'Unknown'} on {formatAuditDate(cat.modifiedAt)}</span>}</li>)}</ul>}</div></div>;
 }
 
 function LoginPage({ onLogin }) {

@@ -2,6 +2,7 @@ package com.example.services.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Date;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ public class UserServiceImpl implements UserServiceI {
 		log.info("Initiating the dao call to create a User");
 		User toUser = this.dtoToUser(userDto);
 		toUser.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
+		Date now = new Date();
+		toUser.setCreatedBy(toUser.getEmail());
+		toUser.setModifiedBy(toUser.getEmail());
+		toUser.setCreatedAt(now);
+		toUser.setModifiedAt(now);
 		Role userRole = this.roleRepository.findByRoleName("ROLE_USER")
 				.orElseGet(() -> this.roleRepository.save(new Role(null, "ROLE_USER")));
 		toUser.setRoles(new java.util.HashSet<>(java.util.Set.of(userRole)));
@@ -61,6 +67,11 @@ public class UserServiceImpl implements UserServiceI {
 
 	@Override
 	public UserDto updateUserById(UserDto userDto, Integer userId) {
+		return updateUserById(userDto, userId, null);
+	}
+
+	@Override
+	public UserDto updateUserById(UserDto userDto, Integer userId, User actor) {
 		log.info("Initiating the dao call to update the user of userId: {}", userId);
 		User user = this.userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("user", "userId", userId));
@@ -72,6 +83,9 @@ public class UserServiceImpl implements UserServiceI {
 		user.setEmail(userDto.getEmail());
 		user.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
 		user.setAbout(userDto.getAbout());
+		String modifier = actor != null ? actor.getEmail() : user.getEmail();
+		user.setModifiedBy(modifier);
+		user.setModifiedAt(new Date());
 
 		// save the updated user
 		User updatedUser = this.userRepository.save(user);

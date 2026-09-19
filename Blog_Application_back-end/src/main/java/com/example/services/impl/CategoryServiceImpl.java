@@ -2,12 +2,14 @@ package com.example.services.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Date;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.entities.Category;
+import com.example.entities.User;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.CategoryDto;
 import com.example.repositories.CategoryRepository;
@@ -27,9 +29,14 @@ public class CategoryServiceImpl implements CategoryServiceI {
 
 	// CREATE
 	@Override
-	public CategoryDto createCategory(CategoryDto categoryDto) {
+	public CategoryDto createCategory(CategoryDto categoryDto, User actor) {
 		log.info("Initiating the dao call to create a Category");
 		Category category = this.modelMapper.map(categoryDto, Category.class);
+		Date now = new Date();
+		category.setCreatedBy(actor.getEmail());
+		category.setModifiedBy(actor.getEmail());
+		category.setCreatedAt(now);
+		category.setModifiedAt(now);
 		Category saved = this.categoryRepository.save(category);
 		log.info("Completed the dao call to create a Category");
 		return this.modelMapper.map(saved, CategoryDto.class);
@@ -37,12 +44,14 @@ public class CategoryServiceImpl implements CategoryServiceI {
 
 	// UPDATE
 	@Override
-	public CategoryDto updateCategoryById(CategoryDto categoryDto, Integer categoryId) {
+	public CategoryDto updateCategoryById(CategoryDto categoryDto, Integer categoryId, User actor) {
 		log.info("Initiating the dao call to update a Category of categoryId: {}", categoryId);
 		Category category = this.categoryRepository.findById(categoryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 		category.setCategoryTitle(categoryDto.getCategoryTitle());
 		category.setCategoryDescription(categoryDto.getCategoryDescription());
+		category.setModifiedBy(actor.getEmail());
+		category.setModifiedAt(new Date());
 		Category updatedCategory = this.categoryRepository.save(category);
 		log.info("Completed the dao call to update a Category of categoryId: {}", categoryId);
 		return this.modelMapper.map(updatedCategory, CategoryDto.class);

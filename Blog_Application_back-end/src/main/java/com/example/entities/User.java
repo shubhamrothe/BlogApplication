@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.Date;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -49,6 +50,14 @@ public class User implements UserDetails{
 	private String password;
 	@Column(name = "about")
 	private String about;
+	@Column(name = "created_by")
+	private String createdBy;
+	@Column(name = "modified_by")
+	private String modifiedBy;
+	@Column(name = "created_at")
+	private Date createdAt;
+	@Column(name = "modified_at")
+	private Date modifiedAt;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Post> posts = new ArrayList<>();

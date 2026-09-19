@@ -20,6 +20,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import com.example.payloads.ApiResponse;
 import com.example.payloads.CategoryDto;
 import com.example.services.CategoryServiceI;
+import com.example.entities.User;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,9 +36,10 @@ public class CategoryController {
 	// CREATE
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto,
+			@AuthenticationPrincipal User user) {
 		log.info("Requesting to create a Category");
-		CategoryDto category = this.categoryServiceI.createCategory(categoryDto);
+		CategoryDto category = this.categoryServiceI.createCategory(categoryDto, user);
 		log.info("Completed the request to create a Category");
 		return new ResponseEntity<CategoryDto>(category, HttpStatus.CREATED);
 	}
@@ -45,9 +48,9 @@ public class CategoryController {
 	@PutMapping("/{categoryId}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<CategoryDto> updateCategoryById(@Valid @RequestBody CategoryDto categoryDto,
-			@PathVariable Integer categoryId) {
+			@PathVariable Integer categoryId, @AuthenticationPrincipal User user) {
 		log.info("Requesting to update a Category of categoryId: {}" + categoryId);
-		CategoryDto updateCategoryById = this.categoryServiceI.updateCategoryById(categoryDto, categoryId);
+		CategoryDto updateCategoryById = this.categoryServiceI.updateCategoryById(categoryDto, categoryId, user);
 		log.info("Complete the request to update a Category of categoryId: {}" + categoryId);
 		return new ResponseEntity<CategoryDto>(updateCategoryById, HttpStatus.CREATED);
 	}

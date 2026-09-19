@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.payloads.ApiResponse;
 import com.example.payloads.UserDto;
 import com.example.services.UserServiceI;
+import com.example.entities.User;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,9 +45,10 @@ public class UserController {
 
 	// PUT
 	@PutMapping("/{userId}")
-	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable Integer userId) {
+	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable Integer userId,
+			@AuthenticationPrincipal User user) {
 		log.info("Requesting to update a User of userId {}" + userId);
-		UserDto updatedUserDto = this.userServiceI.updateUserById(userDto, userId);
+		UserDto updatedUserDto = this.userServiceI.updateUserById(userDto, userId, user);
 		log.info("Completed the request to update a User of userId {}" + userId);
 		return ResponseEntity.ok(updatedUserDto);
 	}

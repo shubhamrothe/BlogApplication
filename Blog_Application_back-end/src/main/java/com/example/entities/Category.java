@@ -2,6 +2,7 @@ package com.example.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -35,6 +36,14 @@ public class Category {
 
 	@Column(name = "category_description")
 	private String categoryDescription;
+	@Column(name = "created_by")
+	private String createdBy;
+	@Column(name = "modified_by")
+	private String modifiedBy;
+	@Column(name = "created_at")
+	private Date createdAt;
+	@Column(name = "modified_at")
+	private Date modifiedAt;
 	
 	//We can change these as per our requirement
 	@OneToMany(mappedBy ="category", cascade=CascadeType.ALL, fetch= FetchType.LAZY)
