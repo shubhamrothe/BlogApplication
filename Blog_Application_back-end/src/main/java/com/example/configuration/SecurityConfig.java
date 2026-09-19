@@ -45,7 +45,7 @@ public class SecurityConfig {
             .authorizeHttpRequests((requests) ->
                 requests
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .requestMatchers("/api/auth/login").permitAll()
+                .requestMatchers("/api/auth/login", "/api/auth/forgot-password", "/api/auth/reset-password").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/users", "/api/users/").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/category/**", "/api/categories/**").permitAll()
                 .anyRequest().authenticated()

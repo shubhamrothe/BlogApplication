@@ -14,6 +14,12 @@ import com.example.entities.Role;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.UserDto;
 import com.example.payloads.ChangePasswordRequest;
+import com.example.payloads.ForgotPasswordRequest;
+import com.example.payloads.ResetPasswordRequest;
+import com.example.entities.PasswordResetToken;
+import com.example.repositories.PasswordResetTokenRepository;
+import java.util.UUID;
+import java.util.Calendar;
 import com.example.repositories.UserRepository;
 import com.example.repositories.RoleRepository;
 import com.example.services.UserServiceI;
@@ -35,6 +41,8 @@ public class UserServiceImpl implements UserServiceI {
 	private PasswordEncoder passwordEncoder;
 	@Autowired
 	private RoleRepository roleRepository;
+	@Autowired
+	private PasswordResetTokenRepository passwordResetTokenRepository;
 
 	// TO CREATE
 	@Override
@@ -107,6 +115,38 @@ public class UserServiceImpl implements UserServiceI {
 		actor.setModifiedBy(actor.getEmail());
 		actor.setModifiedAt(new Date());
 		this.userRepository.save(actor);
+	}
+
+	@Override
+	public String createPasswordResetToken(ForgotPasswordRequest request) {
+		User user = this.userRepository.findByEmail(request.getEmail()).orElse(null);
+		if (user == null) {
+			return null;
+		}
+		PasswordResetToken resetToken = new PasswordResetToken();
+		resetToken.setToken(UUID.randomUUID().toString());
+		resetToken.setUser(user);
+		Calendar expiry = Calendar.getInstance();
+		expiry.add(Calendar.MINUTE, 15);
+		resetToken.setExpiresAt(expiry.getTime());
+		resetToken.setUsed(false);
+		return this.passwordResetTokenRepository.save(resetToken).getToken();
+	}
+
+	@Override
+	public void resetPassword(ResetPasswordRequest request) {
+		PasswordResetToken resetToken = this.passwordResetTokenRepository.findByToken(request.getToken())
+				.orElseThrow(() -> new BadCredentialsException("Reset token is invalid or expired"));
+		if (resetToken.isUsed() || resetToken.getExpiresAt().before(new Date())) {
+			throw new BadCredentialsException("Reset token is invalid or expired");
+		}
+		User user = resetToken.getUser();
+		user.setPassword(this.passwordEncoder.encode(request.getNewPassword()));
+		user.setModifiedBy(user.getEmail());
+		user.setModifiedAt(new Date());
+		this.userRepository.save(user);
+		resetToken.setUsed(true);
+		this.passwordResetTokenRepository.save(resetToken);
 	}
 
 	@Override

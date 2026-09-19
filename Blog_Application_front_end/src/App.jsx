@@ -348,7 +348,7 @@ function LoginPage({ onLogin }) {
     }
 
   };
-  return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Login</h1><form className="form" onSubmit={handleSubmit}><div className="field"><label>Email</label><input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div><div className="field"><label>Password</label><input type="password" required value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>{error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}<button type="submit" className="btn btn-primary">Login</button></form></div></div>;
+  return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Login</h1><form className="form" onSubmit={handleSubmit}><div className="field"><label>Email</label><input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div><div className="field"><label>Password</label><input type="password" required value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>{error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}<button type="submit" className="btn btn-primary">Login</button></form><Link className="text-link" to="/forgot-password">Forgot password?</Link></div></div>;
 }
 
 function RegisterPage() {
@@ -388,6 +388,7 @@ function ChangePasswordPage() {
       setError('New password and confirmation do not match.');
       return;
     }
+
     try {
       await apiRequest('/users/change-password', {
         method: 'POST',
@@ -413,6 +414,47 @@ function ChangePasswordPage() {
   </div></div>;
 }
 
+function ForgotPasswordPage() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError('');
+    try {
+      const result = await apiRequest('/auth/forgot-password', { method: 'POST', body: { email } });
+      if (result.resetToken) navigate(`/reset-password?token=${encodeURIComponent(result.resetToken)}`);
+      else setMessage(result.message);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Forgot password</h1><p className="muted">Enter your account email to create a password reset link.</p><form className="form" onSubmit={handleSubmit}><div className="field"><label htmlFor="forgotEmail">Email</label><input id="forgotEmail" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></div>{error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}{message && <p className="muted">{message}</p>}<button type="submit" className="btn btn-primary">Continue</button></form></div></div>;
+}
+
+function ResetPasswordPage() {
+  const navigate = useNavigate();
+  const token = new URLSearchParams(window.location.search).get('token') || '';
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+    try {
+      await apiRequest('/auth/reset-password', { method: 'POST', body: { token, newPassword: password } });
+      navigate('/login');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Reset password</h1><form className="form" onSubmit={handleSubmit}><div className="field"><label htmlFor="resetPassword">New password</label><input id="resetPassword" type="password" required minLength={4} maxLength={10} value={password} onChange={(e) => setPassword(e.target.value)} /></div><div className="field"><label htmlFor="resetConfirm">Confirm password</label><input id="resetConfirm" type="password" required minLength={4} maxLength={10} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></div>{error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}<button type="submit" className="btn btn-primary">Reset password</button></form></div></div>;
+}
+
 export default function App() {
   const [user, setUser] = useState(getCurrentUser());
   useEffect(() => { if (!getAuthToken()) setUser(null); }, []);
@@ -426,6 +468,8 @@ export default function App() {
     <Route path="/categories" element={<CategoriesPage />} />
     <Route path="/login" element={<LoginPage onLogin={setUser} />} />
     <Route path="/register" element={<RegisterPage />} />
+    <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+    <Route path="/reset-password" element={<ResetPasswordPage />} />
     <Route path="/change-password" element={user ? <ChangePasswordPage /> : <Navigate to="/login" replace />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></Layout>;

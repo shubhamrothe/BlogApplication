@@ -17,6 +17,9 @@ import com.example.payloads.JwtAuthRequest;
 import com.example.payloads.JwtAuthResponse;
 import com.example.entities.User;
 import com.example.security.JwtTokenHelper;
+import com.example.payloads.*;
+import com.example.services.UserServiceI;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -30,6 +33,8 @@ public class AuthController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	@Autowired
+	private UserServiceI userServiceI;
 
 	// Login API
 	@PostMapping("/login")
@@ -51,6 +56,25 @@ public class AuthController {
 		// response.setToken(token); --> The JwtAuthResponse constructor already takes
 		// care of setting the token, so no need to call setToken again
 		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping("/forgot-password")
+	public ResponseEntity<java.util.Map<String, String>> forgotPassword(
+			@Valid @RequestBody ForgotPasswordRequest request) {
+		String token = this.userServiceI.createPasswordResetToken(request);
+		java.util.Map<String, String> response = new java.util.HashMap<>();
+		response.put("message", "If the email exists, a reset token has been generated.");
+		if (token != null) {
+			response.put("resetToken", token);
+		}
+		return ResponseEntity.ok(response);
+	}
+
+	@PostMapping("/reset-password")
+	public ResponseEntity<com.example.payloads.ApiResponse> resetPassword(
+			@Valid @RequestBody ResetPasswordRequest request) {
+		this.userServiceI.resetPassword(request);
+		return ResponseEntity.ok(new com.example.payloads.ApiResponse("Password reset successfully", true));
 	}
 
 	private void authenticate(String email, String password) {
