@@ -48,11 +48,11 @@ public class Post {
 	@Column(name = "modified_at")
 	private Date modifiedAt;
 	@Column(name = "like_count")
-	private int likeCount;
+	private Integer likeCount = 0;
 	@Column(name = "comment_count")
-	private int commentCount;
+	private Integer commentCount = 0;
 	@Column(name = "share_count")
-	private int shareCount;
+	private Integer shareCount = 0;
 	
 	@ManyToOne
 	@JoinColumn(name="category_id")

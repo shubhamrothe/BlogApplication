@@ -45,7 +45,7 @@ public class CommentServiceImpl implements CommentServiceI{
 		comment.setPost(post);
 		comment.setUser(user);
 		Comment saved = this.commentRepository.save(comment);
-		post.setCommentCount(post.getCommentCount() + 1);
+		post.setCommentCount((post.getCommentCount() == null ? 0 : post.getCommentCount()) + 1);
 		this.postRepository.save(post);
 		return this.modelMapper.map(saved, CommentDto.class);
 	}

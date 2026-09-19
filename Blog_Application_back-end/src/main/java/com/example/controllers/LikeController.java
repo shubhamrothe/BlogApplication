@@ -34,7 +34,7 @@ public class LikeController {
 			Like like = new Like();
 			like.setPost(post);
 			like.setUser(user);
-			post.setLikeCount(post.getLikeCount() + 1);
+			post.setLikeCount((post.getLikeCount() == null ? 0 : post.getLikeCount()) + 1);
 			postRepository.save(post);
 			return likeRepository.save(like);
 		});
@@ -50,7 +50,7 @@ public class LikeController {
 					likeRepository.delete(like);
 					return true;
 				}).orElse(false);
-		if (removed && post.getLikeCount() > 0) {
+		if (removed && post.getLikeCount() != null && post.getLikeCount() > 0) {
 			post.setLikeCount(post.getLikeCount() - 1);
 			postRepository.save(post);
 		}
@@ -61,7 +61,7 @@ public class LikeController {
 	public ResponseEntity<Map<String, Object>> share(@PathVariable Integer postId) {
 		Post post = postRepository.findById(postId)
 				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
-		post.setShareCount(post.getShareCount() + 1);
+		post.setShareCount((post.getShareCount() == null ? 0 : post.getShareCount()) + 1);
 		postRepository.save(post);
 		return ResponseEntity.ok(Map.of("shareCount", post.getShareCount()));
 	}
