@@ -2,7 +2,7 @@ package com.example.controllers;
 
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,7 +33,7 @@ public class UserController {
 	private UserServiceI userServiceI;
 
 	// POST
-	@PostMapping("/")
+	@PostMapping
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
 		log.info("Requesting to create a User");
 		UserDto createUserDto = this.userServiceI.createUser(userDto);
@@ -60,7 +60,7 @@ public class UserController {
 	}
 
 	// GET-ALL
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<List<UserDto>> getAllUsers() {
 		log.info("Requesting to retrive all Users");
 		List<UserDto> list = this.userServiceI.getAllUsers();

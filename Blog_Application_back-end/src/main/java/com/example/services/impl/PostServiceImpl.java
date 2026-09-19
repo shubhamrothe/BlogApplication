@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -147,7 +147,7 @@ public class PostServiceImpl implements PostServiceI {
 	@Override
 	public List<PostDto> searchPosts(String keyword) {
 	List<Post> postsByKeyword = this.postRepository.findBypostTitleContaining(keyword);
-	List<PostDto> listOfPostDto = postsByKeyword.stream().map((post)-> this.modelMapper.map(postsByKeyword, PostDto.class))
+	List<PostDto> listOfPostDto = postsByKeyword.stream().map((post)-> this.modelMapper.map(post, PostDto.class))
 	.collect(Collectors.toList());
 	return listOfPostDto;
 	}

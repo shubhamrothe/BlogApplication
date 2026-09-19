@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.entities.User;
@@ -25,11 +26,15 @@ public class UserServiceImpl implements UserServiceI {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
 	// TO CREATE
 	@Override
 	public UserDto createUser(UserDto userDto) {
 		log.info("Initiating the dao call to create a User");
 		User toUser = this.dtoToUser(userDto);
+		toUser.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
 		User savedUser = this.userRepository.save(toUser);
 		UserDto toUserDto = this.userToDto(savedUser);
 		log.info("Completed the dao call to create a User");
@@ -58,7 +63,7 @@ public class UserServiceImpl implements UserServiceI {
 		// update the user properties from the userDto
 		user.setUserName(userDto.getUserName());
 		user.setEmail(userDto.getEmail());
-		user.setPassword(userDto.getPassword());
+		user.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
 		user.setAbout(userDto.getAbout());
 
 		// save the updated user

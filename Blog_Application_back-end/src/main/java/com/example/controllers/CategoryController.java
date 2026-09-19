@@ -2,7 +2,7 @@ package com.example.controllers;
 
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +31,7 @@ public class CategoryController {
 	private CategoryServiceI categoryServiceI;
 
 	// CREATE
-	@PostMapping("/")
+	@PostMapping
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
 		log.info("Requesting to create a Category");
 		CategoryDto category = this.categoryServiceI.createCategory(categoryDto);
@@ -69,7 +69,7 @@ public class CategoryController {
 	}
 
 	// GETALL
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<List<CategoryDto>> getAllCategory() {
 		log.info("Requesting to get all Categories");
 		List<CategoryDto> allCategory = this.categoryServiceI.getAllCategory();

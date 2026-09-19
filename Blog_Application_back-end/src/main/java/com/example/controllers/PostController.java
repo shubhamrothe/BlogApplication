@@ -3,7 +3,7 @@ package com.example.controllers;
 import java.io.IOException;
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -119,16 +119,15 @@ public class PostController {
 		return new ResponseEntity<List<PostDto>>(posts, HttpStatus.OK);	
 	}
 	
-	//post image upload
-//	@PostMapping("/post/image/upload/{postId}")
-//	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
-//			@PathVariable Integer postId) throws IOException{
-//		
-//		PostDto postDto = this.postServiceI.getPostById(postId);
-//		
-//		String fileName = this.fileServiceI.uploadImage(path, image);
-//		postDto.setImageName(fileName);
-//		PostDto updatePostById = this.postServiceI.updatePostById(postDto, postId);
-//	return new ResponseEntity<PostDto>(updatePostById, HttpStatus.OK);
-//	}
+	@PostMapping("/posts/{postId}/image")
+	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
+			@PathVariable Integer postId) throws IOException {
+		if (image.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		PostDto postDto = this.postServiceI.getPostById(postId);
+		postDto.setImageName(this.fileServiceI.uploadImage(path, image));
+		PostDto updatedPost = this.postServiceI.updatePostById(postDto, postId);
+		return new ResponseEntity<>(updatedPost, HttpStatus.OK);
+	}
 }

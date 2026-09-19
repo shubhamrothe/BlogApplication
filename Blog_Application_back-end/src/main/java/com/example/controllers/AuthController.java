@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.payloads.JwtAuthRequest;
 import com.example.payloads.JwtAuthResponse;
+import com.example.entities.User;
 import com.example.security.JwtTokenHelper;
 
 @RestController
@@ -44,7 +45,7 @@ public class AuthController {
 		String token = this.jwtTokenHelper.generateToken(userDetails);
 
 		// Return response
-		JwtAuthResponse response = new JwtAuthResponse(token);
+		JwtAuthResponse response = new JwtAuthResponse(token, ((User) userDetails).getUserId());
 		// response.setToken(token); --> The JwtAuthResponse constructor already takes
 		// care of setting the token, so no need to call setToken again
 		return new ResponseEntity<>(response, HttpStatus.OK);

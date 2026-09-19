@@ -21,6 +21,9 @@ public class FileServiceImpl implements FileServiceI {
 	public String uploadImage(String path, MultipartFile file) throws IOException {
 		//File name
 		String name= file.getOriginalFilename();
+		if (name == null || name.isBlank() || !name.contains(".")) {
+			throw new IOException("Image file must have a valid filename and extension");
+		}
 		
 		//random name generate file
 		String randomID =  UUID.randomUUID().toString();
@@ -32,7 +35,7 @@ public class FileServiceImpl implements FileServiceI {
 		//create folder if not created
 		File f= new File(path);
 		if(!f.exists()) {
-			f.mkdir();
+			Files.createDirectories(f.toPath());
 			}
 		
 		//file copy
