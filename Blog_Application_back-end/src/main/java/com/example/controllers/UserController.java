@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.payloads.ApiResponse;
 import com.example.payloads.UserDto;
+import com.example.payloads.ChangePasswordRequest;
 import com.example.services.UserServiceI;
 import com.example.entities.User;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -41,6 +42,13 @@ public class UserController {
 		UserDto createUserDto = this.userServiceI.createUser(userDto);
 		log.info("Completed the request to create a User");
 		return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
+	}
+
+	@PostMapping("/change-password")
+	public ResponseEntity<ApiResponse> changePassword(@Valid @RequestBody ChangePasswordRequest request,
+			@AuthenticationPrincipal User user) {
+		this.userServiceI.changePassword(request, user);
+		return ResponseEntity.ok(new ApiResponse("Password changed successfully", true));
 	}
 
 	// PUT

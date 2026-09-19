@@ -47,6 +47,12 @@ public class Post {
 	private Date createdAt;
 	@Column(name = "modified_at")
 	private Date modifiedAt;
+	@Column(name = "like_count")
+	private int likeCount;
+	@Column(name = "comment_count")
+	private int commentCount;
+	@Column(name = "share_count")
+	private int shareCount;
 	
 	@ManyToOne
 	@JoinColumn(name="category_id")

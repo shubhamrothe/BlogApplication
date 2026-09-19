@@ -44,7 +44,10 @@ public class CommentServiceImpl implements CommentServiceI{
 		Comment comment = this.modelMapper.map(commentDto, Comment.class);
 		comment.setPost(post);
 		comment.setUser(user);
-		return this.modelMapper.map(this.commentRepository.save(comment), CommentDto.class);
+		Comment saved = this.commentRepository.save(comment);
+		post.setCommentCount(post.getCommentCount() + 1);
+		this.postRepository.save(post);
+		return this.modelMapper.map(saved, CommentDto.class);
 	}
 
 	@Override

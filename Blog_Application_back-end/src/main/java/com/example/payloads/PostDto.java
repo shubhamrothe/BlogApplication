@@ -32,6 +32,9 @@ public class PostDto {
 	private String modifiedBy;
 	private Date createdAt;
 	private Date modifiedAt;
+	private int likeCount;
+	private int commentCount;
+	private int shareCount;
 	//@NotEmpty
 	private CategoryDto category;
 	//@NotEmpty

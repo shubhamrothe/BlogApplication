@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.payloads.UserDto;
 import com.example.entities.User;
+import com.example.payloads.ChangePasswordRequest;
 
 public interface UserServiceI {
 
@@ -14,6 +15,8 @@ public interface UserServiceI {
 	
 	UserDto updateUserById(UserDto user, Integer userId);
 	UserDto updateUserById(UserDto user, Integer userId, User actor);
+
+	void changePassword(ChangePasswordRequest request, User actor);
 	
 	List<UserDto> getAllUsers();
 	

@@ -13,11 +13,13 @@ import com.example.entities.User;
 import com.example.entities.Role;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.UserDto;
+import com.example.payloads.ChangePasswordRequest;
 import com.example.repositories.UserRepository;
 import com.example.repositories.RoleRepository;
 import com.example.services.UserServiceI;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.BadCredentialsException;
 
 @Service
 @Slf4j
@@ -94,6 +96,17 @@ public class UserServiceImpl implements UserServiceI {
 		UserDto toUserDto = this.userToDto(updatedUser);
 		log.info("Completed the dao call to update the user of userId: {}", userId);
 		return toUserDto;
+	}
+
+	@Override
+	public void changePassword(ChangePasswordRequest request, User actor) {
+		if (!this.passwordEncoder.matches(request.getCurrentPassword(), actor.getPassword())) {
+			throw new BadCredentialsException("Current password is incorrect");
+		}
+		actor.setPassword(this.passwordEncoder.encode(request.getNewPassword()));
+		actor.setModifiedBy(actor.getEmail());
+		actor.setModifiedAt(new Date());
+		this.userRepository.save(actor);
 	}
 
 	@Override

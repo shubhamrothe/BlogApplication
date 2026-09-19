@@ -29,7 +29,10 @@ function Layout({ children, user, onLogout }) {
           {user && <Link className="nav-link" to="/posts/new">New post</Link>}
           <Link className="nav-link" to="/categories">Categories</Link>
           {user ? (
-            <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
+            <>
+              <Link className="nav-link" to="/change-password">Change password</Link>
+              <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
+            </>
           ) : (
             <>
               <Link className="nav-link" to="/login">Login</Link>
@@ -130,6 +133,7 @@ function PostsPage() {
             <h3>{post.postTitle || 'Untitled Post'}</h3>
             <p className="story-meta">Created by {post.createdBy || post.user?.userName || 'Unknown'} · {formatAuditDate(post.createdAt || post.addedDate)}</p>
             <p className="muted">{post.postContent ? `${post.postContent.slice(0, 120)}...` : 'No content'}</p>
+            <p className="engagement-counts">{post.likeCount || 0} likes · {post.commentCount || 0} comments · {post.shareCount || 0} shares</p>
             <div className="inline-actions">
               <Link className="btn btn-primary" to={`/posts/${post.postId}`}>View</Link>
               {canModify(post) && <><Link className="btn btn-secondary" to={`/posts/${post.postId}/edit`}>Edit</Link><button className="btn btn-danger" onClick={() => deletePost(post.postId)}>Delete</button></>}
@@ -278,9 +282,14 @@ function PostDetailsPage() {
   const [comment, setComment] = useState('');
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
+  const [shareCount, setShareCount] = useState(0);
   const [message, setMessage] = useState('');
   useEffect(() => {
-    apiRequest(`/posts/${postId}`).then(setPost).catch((err) => setError(err.message));
+    apiRequest(`/posts/${postId}`).then((result) => {
+      setPost(result);
+      setLikeCount(result.likeCount || 0);
+      setShareCount(result.shareCount || 0);
+    }).catch((err) => setError(err.message));
   }, [postId]);
   const handleLike = async () => {
     const result = liked
@@ -293,18 +302,20 @@ function PostDetailsPage() {
     event.preventDefault();
     if (!comment.trim()) return;
     const result = await apiRequest(`/post/${postId}/comments`, { method: 'POST', body: { commentContent: comment } });
-    setPost((current) => ({ ...current, comments: [...(current.comments || []), result] }));
+    setPost((current) => ({ ...current, comments: [...(current.comments || []), result], commentCount: (current.commentCount || 0) + 1 }));
     setComment('');
   };
   const handleShare = async () => {
     const url = window.location.href;
     if (navigator.share) await navigator.share({ title: post.postTitle, url });
     else await navigator.clipboard.writeText(url);
+    const result = await apiRequest(`/posts/${postId}/share`, { method: 'POST' });
+    setShareCount(result.shareCount);
     setMessage(navigator.share ? 'Shared successfully.' : 'Link copied to clipboard.');
   };
   if (error) return <div className="page"><div className="card">Error: {error}</div></div>;
   if (!post) return <div className="page"><div className="card">Loading post...</div></div>;
-  return <div className="page"><article className="card post-detail"><span className="eyebrow">{post.category?.categoryTitle || 'Story'}</span><h1 className="page-title">{post.postTitle}</h1><p className="story-meta">Created by {post.createdBy || post.user?.userName || 'Unknown'} · {formatAuditDate(post.createdAt || post.addedDate)}{post.modifiedAt && ` · Modified by ${post.modifiedBy || 'Unknown'} on ${formatAuditDate(post.modifiedAt)}`}</p><p className="muted">{post.postContent}</p><div className="post-actions"><button className="btn btn-secondary" onClick={handleLike}>{liked ? 'Unlike' : 'Like'} {likeCount ? `(${likeCount})` : ''}</button><button className="btn btn-secondary" onClick={handleShare}>Share</button><Link className="btn btn-secondary" to="/posts">Back to posts</Link></div>{message && <p className="muted">{message}</p>}<form className="comment-form" onSubmit={handleComment}><label htmlFor="comment">Join the conversation</label><textarea id="comment" required minLength={2} maxLength={500} value={comment} onChange={(event) => setComment(event.target.value)} placeholder="Add a thoughtful comment..." /><button className="btn btn-primary" type="submit">Post comment</button></form><div className="comments">{(post.comments || []).map((item) => <div className="comment" key={item.commentId}><p>{item.commentContent}</p></div>)}</div></article></div>;
+  return <div className="page"><article className="card post-detail"><span className="eyebrow">{post.category?.categoryTitle || 'Story'}</span><h1 className="page-title">{post.postTitle}</h1><p className="story-meta">Created by {post.createdBy || post.user?.userName || 'Unknown'} · {formatAuditDate(post.createdAt || post.addedDate)}{post.modifiedAt && ` · Modified by ${post.modifiedBy || 'Unknown'} on ${formatAuditDate(post.modifiedAt)}`}</p><p className="muted">{post.postContent}</p><p className="engagement-counts">{likeCount} likes · {post.commentCount || 0} comments · {shareCount} shares</p><div className="post-actions"><button className="btn btn-secondary" onClick={handleLike}>{liked ? 'Unlike' : 'Like'} {likeCount ? `(${likeCount})` : ''}</button><button className="btn btn-secondary" onClick={handleShare}>Share</button><Link className="btn btn-secondary" to="/posts">Back to posts</Link></div>{message && <p className="muted">{message}</p>}<form className="comment-form" onSubmit={handleComment}><label htmlFor="comment">Join the conversation</label><textarea id="comment" required minLength={2} maxLength={500} value={comment} onChange={(event) => setComment(event.target.value)} placeholder="Add a thoughtful comment..." /><button className="btn btn-primary" type="submit">Post comment</button></form><div className="comments">{(post.comments || []).map((item) => <div className="comment" key={item.commentId}><p>{item.commentContent}</p></div>)}</div></article></div>;
 }
 
 function CategoriesPage() {
@@ -352,6 +363,44 @@ function RegisterPage() {
     } catch (err) {
       setError(err.message);
     }
+
+    function ChangePasswordPage() {
+      const navigate = useNavigate();
+      const [form, setForm] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
+      const [error, setError] = useState('');
+      const [message, setMessage] = useState('');
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        setError('');
+        setMessage('');
+        if (form.newPassword !== form.confirmPassword) {
+          setError('New password and confirmation do not match.');
+          return;
+        }
+        try {
+          await apiRequest('/users/change-password', {
+            method: 'POST',
+            body: { currentPassword: form.currentPassword, newPassword: form.newPassword },
+          });
+          setMessage('Password changed successfully.');
+          setForm({ currentPassword: '', newPassword: '', confirmPassword: '' });
+          setTimeout(() => navigate('/posts'), 900);
+        } catch (err) {
+          setError(err.message);
+        }
+      };
+      return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card">
+        <h1 className="page-title">Change password</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="field"><label htmlFor="currentPassword">Current password</label><input id="currentPassword" required type="password" value={form.currentPassword} onChange={(e) => setForm({ ...form, currentPassword: e.target.value })} /></div>
+          <div className="field"><label htmlFor="newPassword">New password</label><input id="newPassword" required minLength={4} maxLength={10} type="password" value={form.newPassword} onChange={(e) => setForm({ ...form, newPassword: e.target.value })} /></div>
+          <div className="field"><label htmlFor="confirmPassword">Confirm new password</label><input id="confirmPassword" required minLength={4} maxLength={10} type="password" value={form.confirmPassword} onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })} /></div>
+          {error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}
+          {message && <p className="muted">{message}</p>}
+          <button type="submit" className="btn btn-primary">Update password</button>
+        </form>
+      </div></div>;
+    }
   };
   return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Register</h1><form className="form" onSubmit={handleSubmit}>
     <div className="field"><label>Name</label><input required minLength={4} value={form.userName} onChange={(e) => setForm({ ...form, userName: e.target.value })} /></div>
@@ -376,6 +425,7 @@ export default function App() {
     <Route path="/categories" element={<CategoriesPage />} />
     <Route path="/login" element={<LoginPage onLogin={setUser} />} />
     <Route path="/register" element={<RegisterPage />} />
+    <Route path="/change-password" element={user ? <ChangePasswordPage /> : <Navigate to="/login" replace />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></Layout>;
 }

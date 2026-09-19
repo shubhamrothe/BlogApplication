@@ -34,6 +34,8 @@ public class LikeController {
 			Like like = new Like();
 			like.setPost(post);
 			like.setUser(user);
+			post.setLikeCount(post.getLikeCount() + 1);
+			postRepository.save(post);
 			return likeRepository.save(like);
 		});
 		return ResponseEntity.ok(Map.of("liked", true, "likeCount", likeRepository.countByPost(post)));
@@ -43,7 +45,24 @@ public class LikeController {
 	public ResponseEntity<Map<String, Object>> unlike(@PathVariable Integer postId, @AuthenticationPrincipal User user) {
 		Post post = postRepository.findById(postId)
 				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
-		likeRepository.findByPostAndUser(post, user).ifPresent(likeRepository::delete);
+		boolean removed = likeRepository.findByPostAndUser(post, user)
+				.map(like -> {
+					likeRepository.delete(like);
+					return true;
+				}).orElse(false);
+		if (removed && post.getLikeCount() > 0) {
+			post.setLikeCount(post.getLikeCount() - 1);
+			postRepository.save(post);
+		}
 		return ResponseEntity.ok(Map.of("liked", false, "likeCount", likeRepository.countByPost(post)));
+	}
+
+	@PostMapping("/{postId}/share")
+	public ResponseEntity<Map<String, Object>> share(@PathVariable Integer postId) {
+		Post post = postRepository.findById(postId)
+				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
+		post.setShareCount(post.getShareCount() + 1);
+		postRepository.save(post);
+		return ResponseEntity.ok(Map.of("shareCount", post.getShareCount()));
 	}
 }
