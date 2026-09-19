@@ -364,43 +364,6 @@ function RegisterPage() {
       setError(err.message);
     }
 
-    function ChangePasswordPage() {
-      const navigate = useNavigate();
-      const [form, setForm] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
-      const [error, setError] = useState('');
-      const [message, setMessage] = useState('');
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setError('');
-        setMessage('');
-        if (form.newPassword !== form.confirmPassword) {
-          setError('New password and confirmation do not match.');
-          return;
-        }
-        try {
-          await apiRequest('/users/change-password', {
-            method: 'POST',
-            body: { currentPassword: form.currentPassword, newPassword: form.newPassword },
-          });
-          setMessage('Password changed successfully.');
-          setForm({ currentPassword: '', newPassword: '', confirmPassword: '' });
-          setTimeout(() => navigate('/posts'), 900);
-        } catch (err) {
-          setError(err.message);
-        }
-      };
-      return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card">
-        <h1 className="page-title">Change password</h1>
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="field"><label htmlFor="currentPassword">Current password</label><input id="currentPassword" required type="password" value={form.currentPassword} onChange={(e) => setForm({ ...form, currentPassword: e.target.value })} /></div>
-          <div className="field"><label htmlFor="newPassword">New password</label><input id="newPassword" required minLength={4} maxLength={10} type="password" value={form.newPassword} onChange={(e) => setForm({ ...form, newPassword: e.target.value })} /></div>
-          <div className="field"><label htmlFor="confirmPassword">Confirm new password</label><input id="confirmPassword" required minLength={4} maxLength={10} type="password" value={form.confirmPassword} onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })} /></div>
-          {error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}
-          {message && <p className="muted">{message}</p>}
-          <button type="submit" className="btn btn-primary">Update password</button>
-        </form>
-      </div></div>;
-    }
   };
   return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card"><h1 className="page-title">Register</h1><form className="form" onSubmit={handleSubmit}>
     <div className="field"><label>Name</label><input required minLength={4} value={form.userName} onChange={(e) => setForm({ ...form, userName: e.target.value })} /></div>
@@ -410,6 +373,44 @@ function RegisterPage() {
     {error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}
     <button type="submit" className="btn btn-primary">Create account</button>
   </form></div></div>;
+}
+
+function ChangePasswordPage() {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError('');
+    setMessage('');
+    if (form.newPassword !== form.confirmPassword) {
+      setError('New password and confirmation do not match.');
+      return;
+    }
+    try {
+      await apiRequest('/users/change-password', {
+        method: 'POST',
+        body: { currentPassword: form.currentPassword, newPassword: form.newPassword },
+      });
+      setMessage('Password changed successfully.');
+      setForm({ currentPassword: '', newPassword: '', confirmPassword: '' });
+      setTimeout(() => navigate('/posts'), 900);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  return <div className="page" style={{ maxWidth: 500, margin: '0 auto' }}><div className="card">
+    <h1 className="page-title">Change password</h1>
+    <form className="form" onSubmit={handleSubmit}>
+      <div className="field"><label htmlFor="currentPassword">Current password</label><input id="currentPassword" required type="password" value={form.currentPassword} onChange={(e) => setForm({ ...form, currentPassword: e.target.value })} /></div>
+      <div className="field"><label htmlFor="newPassword">New password</label><input id="newPassword" required minLength={4} maxLength={10} type="password" value={form.newPassword} onChange={(e) => setForm({ ...form, newPassword: e.target.value })} /></div>
+      <div className="field"><label htmlFor="confirmPassword">Confirm new password</label><input id="confirmPassword" required minLength={4} maxLength={10} type="password" value={form.confirmPassword} onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })} /></div>
+      {error && <p className="muted" style={{ color: '#fca5a5' }}>{error}</p>}
+      {message && <p className="muted">{message}</p>}
+      <button type="submit" className="btn btn-primary">Update password</button>
+    </form>
+  </div></div>;
 }
 
 export default function App() {
