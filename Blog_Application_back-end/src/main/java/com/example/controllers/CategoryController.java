@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import com.example.payloads.ApiResponse;
 import com.example.payloads.CategoryDto;
@@ -32,6 +33,7 @@ public class CategoryController {
 
 	// CREATE
 	@PostMapping
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
 		log.info("Requesting to create a Category");
 		CategoryDto category = this.categoryServiceI.createCategory(categoryDto);
@@ -41,6 +43,7 @@ public class CategoryController {
 
 	// UPDATE
 	@PutMapping("/{categoryId}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<CategoryDto> updateCategoryById(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable Integer categoryId) {
 		log.info("Requesting to update a Category of categoryId: {}" + categoryId);
@@ -51,6 +54,7 @@ public class CategoryController {
 
 	// DELETEById
 	@DeleteMapping("/{categoryId}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<ApiResponse> deleteCategoryById(@PathVariable Integer categoryId) {
 		log.info("Requesting to delete a Category of categoryId: {}" + categoryId);
 		this.categoryServiceI.deleteCategoryById(categoryId);

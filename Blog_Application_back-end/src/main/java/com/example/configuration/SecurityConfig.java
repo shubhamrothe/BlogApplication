@@ -11,6 +11,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +27,7 @@ import com.example.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 	@Autowired
     private CustomUserDetailsService customUserDetailsService;
@@ -44,8 +46,8 @@ public class SecurityConfig {
                 requests
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/api/auth/login").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/posts/**", "/api/category/**", "/api/categories/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/users", "/api/users/").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/category/**", "/api/categories/**").permitAll()
                 .anyRequest().authenticated()
             )
             .exceptionHandling().authenticationEntryPoint(this.jwtAuthenticationEntryPoint)

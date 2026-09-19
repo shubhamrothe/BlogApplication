@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 public class UserDto {
 
-	private int userId;
+	private Integer userId;
 	@NotEmpty
 	@Size(min=4, message="usrName must have minimum 4 charactures !!")
 	private String userName;

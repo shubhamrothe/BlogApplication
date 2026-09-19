@@ -11,6 +11,7 @@ import com.example.payloads.CommentDto;
 import com.example.repositories.CommentRepository;
 import com.example.repositories.PostRepository;
 import com.example.services.CommentServiceI;
+import com.example.entities.User;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,9 +32,19 @@ public class CommentServiceImpl implements CommentServiceI{
 		.orElseThrow(()-> new ResourceNotFoundException("Post", "postId", postId));
 		Comment comment = this.modelMapper.map(commentDto, Comment.class);
 		comment.setPost(post);
+		// The controller supplies the authenticated user through the overload below.
 		Comment save = this.commentRepository.save(comment);
 		log.info("Completed the dao call to create a Comment for a post of postId: {}", postId);
 		return this.modelMapper.map(save, CommentDto.class);
+	}
+
+	public CommentDto createComment(CommentDto commentDto, Integer postId, User user) {
+		Post post = this.postRepository.findById(postId)
+				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
+		Comment comment = this.modelMapper.map(commentDto, Comment.class);
+		comment.setPost(post);
+		comment.setUser(user);
+		return this.modelMapper.map(this.commentRepository.save(comment), CommentDto.class);
 	}
 
 	@Override

@@ -4,11 +4,12 @@ import java.util.List;
 
 import com.example.payloads.PostDto;
 import com.example.payloads.PostResponse;
+import com.example.entities.User;
 
 public interface PostServiceI {
 
 	//CREATE
-	PostDto createPost (PostDto postDto,Integer userId, Integer categoryId);
+	PostDto createPost (PostDto postDto, Integer userId, Integer categoryId, User actor);
 	
 	//UPDATE
 	PostDto updatePostById(PostDto postDto, Integer postId);

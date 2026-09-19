@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -13,5 +14,6 @@ public class JwtAuthResponse {
 
 	private String token;
 	private Integer userId;
+	private Set<String> roles;
 	
 }

@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.payloads.ApiResponse;
 import com.example.payloads.CommentDto;
 import com.example.services.CommentServiceI;
+import com.example.services.impl.CommentServiceImpl;
+import com.example.entities.User;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,9 +31,10 @@ public class CommentController {
 	//To create Comment
 	
 	@PostMapping("/post/{postId}/comments")
-	public ResponseEntity<CommentDto> createComment(@Valid @RequestBody CommentDto commentDto, @PathVariable Integer postId){
+	public ResponseEntity<CommentDto> createComment(@Valid @RequestBody CommentDto commentDto, @PathVariable Integer postId,
+			@AuthenticationPrincipal User user){
 		log.info("Requesting to create a Comment for a post of postId: {}", postId);
-		CommentDto createComment = this.commentServiceI.createComment(commentDto, postId);
+		CommentDto createComment = ((CommentServiceImpl) this.commentServiceI).createComment(commentDto, postId, user);
 		log.info("Completed the request to create a Comment for a post of postId: {}", postId);
 		return new ResponseEntity<CommentDto>(createComment, HttpStatus.OK);
 	}

@@ -34,7 +34,10 @@ export async function apiRequest(endpoint, options = {}) {
   const contentType = response.headers.get('content-type') || '';
   const payload = contentType.includes('application/json') ? await response.json() : await response.text();
   if (!response.ok) {
-    throw new Error(typeof payload === 'string' ? payload : payload?.message || 'Request failed');
+    const message = typeof payload === 'string'
+      ? payload
+      : payload?.message || Object.values(payload || {}).join(', ') || 'Request failed';
+    throw new Error(message);
   }
   return payload;
 }

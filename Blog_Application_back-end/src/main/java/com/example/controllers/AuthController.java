@@ -45,7 +45,9 @@ public class AuthController {
 		String token = this.jwtTokenHelper.generateToken(userDetails);
 
 		// Return response
-		JwtAuthResponse response = new JwtAuthResponse(token, ((User) userDetails).getUserId());
+		User user = (User) userDetails;
+		JwtAuthResponse response = new JwtAuthResponse(token, user.getUserId(),
+				user.getRoles().stream().map(role -> role.getRoleName()).collect(java.util.stream.Collectors.toSet()));
 		// response.setToken(token); --> The JwtAuthResponse constructor already takes
 		// care of setting the token, so no need to call setToken again
 		return new ResponseEntity<>(response, HttpStatus.OK);

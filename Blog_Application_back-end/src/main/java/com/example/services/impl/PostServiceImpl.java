@@ -24,6 +24,7 @@ import com.example.repositories.CategoryRepository;
 import com.example.repositories.PostRepository;
 import com.example.repositories.UserRepository;
 import com.example.services.PostServiceI;
+import org.springframework.security.access.AccessDeniedException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,7 +43,7 @@ public class PostServiceImpl implements PostServiceI {
 	private CategoryRepository categoryRepository;
 
 	@Override
-	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId) {
+	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId, User actor) {
 		log.info("Initiating the dao call to create a Post for user of userId: {} and for category of categoryId: {}", userId, categoryId);
 		// to fetch user
 		User user = this.userRepository.findById(userId)
@@ -56,6 +57,11 @@ public class PostServiceImpl implements PostServiceI {
 		post.setAddedDate(new Date());
 		post.setUser(user);
 		post.setCategory(category);
+		Date now = new Date();
+		post.setCreatedBy(actor.getEmail());
+		post.setModifiedBy(actor.getEmail());
+		post.setCreatedAt(now);
+		post.setModifiedAt(now);
 
 		Post newPost = this.postRepository.save(post);
 		log.info("Completed the dao call to create a Post for user of userId: {} and for category of categoryId: {}", userId, categoryId);
@@ -72,6 +78,37 @@ public class PostServiceImpl implements PostServiceI {
 		Post updatedPost = this.postRepository.save(post);
 		log.info("Completed the dao call to update a Post of postId: {}",postId);
 		return this.modelMapper.map(updatedPost, PostDto.class);
+	}
+
+	public PostDto updatePostById(PostDto postDto, Integer postId, User user) {
+		Post post = this.postRepository.findById(postId)
+				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
+		assertCanModify(post, user);
+		post.setPostTitle(postDto.getPostTitle());
+		post.setPostContent(postDto.getPostContent());
+		post.setModifiedBy(user.getEmail());
+		post.setModifiedAt(new Date());
+		return this.modelMapper.map(this.postRepository.save(post), PostDto.class);
+	}
+
+	public void deletePostById(Integer postId, User user) {
+		Post post = this.postRepository.findById(postId)
+				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
+		assertCanModify(post, user);
+		this.postRepository.delete(post);
+	}
+
+	public void assertCanModify(Post post, User user) {
+		if (!user.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))
+				&& !post.getUser().getUserId().equals(user.getUserId())) {
+			throw new AccessDeniedException("You can only modify your own posts");
+		}
+	}
+
+	public void assertCanModify(Integer postId, User user) {
+		Post post = this.postRepository.findById(postId)
+				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
+		assertCanModify(post, user);
 	}
 
 	@Override

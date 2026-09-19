@@ -39,6 +39,14 @@ public class Post {
 	private String imageName;
 	@Column(name="date_of_post_creation")
 	private Date addedDate;
+	@Column(name = "created_by")
+	private String createdBy;
+	@Column(name = "modified_by")
+	private String modifiedBy;
+	@Column(name = "created_at")
+	private Date createdAt;
+	@Column(name = "modified_at")
+	private Date modifiedAt;
 	
 	@ManyToOne
 	@JoinColumn(name="category_id")
@@ -50,4 +58,7 @@ public class Post {
 
 	 @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
 	 private Set<Comment> comments = new HashSet<>();
+
+	 @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	 private Set<Like> likes = new HashSet<>();
 }

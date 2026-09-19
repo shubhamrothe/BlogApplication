@@ -9,9 +9,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.entities.User;
+import com.example.entities.Role;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.UserDto;
 import com.example.repositories.UserRepository;
+import com.example.repositories.RoleRepository;
 import com.example.services.UserServiceI;
 
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,8 @@ public class UserServiceImpl implements UserServiceI {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private RoleRepository roleRepository;
 
 	// TO CREATE
 	@Override
@@ -35,6 +39,9 @@ public class UserServiceImpl implements UserServiceI {
 		log.info("Initiating the dao call to create a User");
 		User toUser = this.dtoToUser(userDto);
 		toUser.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
+		Role userRole = this.roleRepository.findByRoleName("ROLE_USER")
+				.orElseGet(() -> this.roleRepository.save(new Role(null, "ROLE_USER")));
+		toUser.setRoles(new java.util.HashSet<>(java.util.Set.of(userRole)));
 		User savedUser = this.userRepository.save(toUser);
 		UserDto toUserDto = this.userToDto(savedUser);
 		log.info("Completed the dao call to create a User");
@@ -103,6 +110,7 @@ public class UserServiceImpl implements UserServiceI {
 //		return user;	
 		// OR
 		User user = this.modelMapper.map(userDto, User.class);
+		user.setUserId(null);
 		return user;
 	}
 

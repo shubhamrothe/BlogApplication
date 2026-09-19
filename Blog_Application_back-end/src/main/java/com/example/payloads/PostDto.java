@@ -28,6 +28,10 @@ public class PostDto {
 	private String imageName;
 	//@NotEmpty
 	private Date addedDate;
+	private String createdBy;
+	private String modifiedBy;
+	private Date createdAt;
+	private Date modifiedAt;
 	//@NotEmpty
 	private CategoryDto category;
 	//@NotEmpty

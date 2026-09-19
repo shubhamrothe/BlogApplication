@@ -20,12 +20,16 @@ import org.springframework.test.util.ReflectionTestUtils;
 import com.example.entities.User;
 import com.example.payloads.UserDto;
 import com.example.repositories.UserRepository;
+import com.example.repositories.RoleRepository;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceImplTest {
 
     @Mock
     private UserRepository userRepository;
+
+    @Mock
+    private RoleRepository roleRepository;
 
     private UserServiceImpl userService;
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -36,6 +40,8 @@ class UserServiceImplTest {
         ReflectionTestUtils.setField(userService, "userRepository", userRepository);
         ReflectionTestUtils.setField(userService, "modelMapper", new ModelMapper());
         ReflectionTestUtils.setField(userService, "passwordEncoder", passwordEncoder);
+        ReflectionTestUtils.setField(userService, "roleRepository", roleRepository);
+        when(roleRepository.findByRoleName("ROLE_USER")).thenReturn(java.util.Optional.of(new com.example.entities.Role(1, "ROLE_USER")));
     }
 
     @Test
@@ -54,6 +60,7 @@ class UserServiceImplTest {
         verify(userRepository).save(captor.capture());
 
         User savedUser = captor.getValue();
+        assertTrue(savedUser.getUserId() == null);
         assertNotEquals("Shubham@", savedUser.getPassword());
         assertTrue(passwordEncoder.matches("Shubham@", savedUser.getPassword()));
     }

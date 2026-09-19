@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.example.entities.User;
+import com.example.services.impl.PostServiceImpl;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.configuration.AppConstants;
@@ -47,18 +51,23 @@ public class PostController {
 	// create
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto, @PathVariable Integer userId,
-			@PathVariable Integer categoryId) {
+			@PathVariable Integer categoryId, @AuthenticationPrincipal User user) {
+		if (!user.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))
+				&& !user.getUserId().equals(userId)) {
+			throw new AccessDeniedException("You can only create posts for your own account");
+		}
 		log.info("Requesting to create a Post for a user of userId: {}", userId);
-		PostDto createPost = this.postServiceI.createPost(postDto, userId, categoryId);
+		PostDto createPost = this.postServiceI.createPost(postDto, userId, categoryId, user);
 		log.info("Completed the request to create a Post for a user of userId: {}", userId);
 		return new ResponseEntity<PostDto>(createPost, HttpStatus.CREATED);
 	}
 
 	// update post by Id
 	@PutMapping("/posts/{postId}")
-	public ResponseEntity<PostDto> updatePostById(@Valid @RequestBody PostDto postDto, @PathVariable Integer postId) {
+	public ResponseEntity<PostDto> updatePostById(@Valid @RequestBody PostDto postDto, @PathVariable Integer postId,
+			@AuthenticationPrincipal User user) {
 		log.info("Requesting to update a Post by postId: {}", postId);
-		PostDto updatePostDto = this.postServiceI.updatePostById(postDto, postId);
+		PostDto updatePostDto = ((PostServiceImpl) this.postServiceI).updatePostById(postDto, postId, user);
 		log.info("Completed the request to delete a Post by postId: {}", postId);
 		return new ResponseEntity<PostDto>(updatePostDto, HttpStatus.OK);
 	}
@@ -87,9 +96,9 @@ public class PostController {
 
 	// delete post by Id
 	@DeleteMapping("/posts/{postId}")
-	public ApiResponse deletePostById(@PathVariable Integer postId) {
+	public ApiResponse deletePostById(@PathVariable Integer postId, @AuthenticationPrincipal User user) {
 		log.info("Requesting to delete a Post by postId: {}", postId);
-		this.postServiceI.deletePostById(postId);
+		((PostServiceImpl) this.postServiceI).deletePostById(postId, user);
 		log.info("Completed the request to delete a Post by postId: {}", postId);
 		return new ApiResponse("Post is successfully deleted!!", true);
 	}
@@ -121,13 +130,14 @@ public class PostController {
 	
 	@PostMapping("/posts/{postId}/image")
 	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
-			@PathVariable Integer postId) throws IOException {
+			@PathVariable Integer postId, @AuthenticationPrincipal User user) throws IOException {
 		if (image.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		PostDto postDto = this.postServiceI.getPostById(postId);
+		((PostServiceImpl) this.postServiceI).assertCanModify(postId, user);
 		postDto.setImageName(this.fileServiceI.uploadImage(path, image));
-		PostDto updatedPost = this.postServiceI.updatePostById(postDto, postId);
+		PostDto updatedPost = ((PostServiceImpl) this.postServiceI).updatePostById(postDto, postId, user);
 		return new ResponseEntity<>(updatedPost, HttpStatus.OK);
 	}
 }
