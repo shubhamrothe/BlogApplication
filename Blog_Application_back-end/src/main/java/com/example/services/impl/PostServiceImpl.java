@@ -17,9 +17,11 @@ import org.springframework.stereotype.Service;
 import com.example.entities.Category;
 import com.example.entities.Post;
 import com.example.entities.User;
+import com.example.entities.Comment;
 import com.example.exceptions.ResourceNotFoundException;
 import com.example.payloads.PostDto;
 import com.example.payloads.PostResponse;
+import com.example.payloads.CommentDto;
 import com.example.repositories.CategoryRepository;
 import com.example.repositories.PostRepository;
 import com.example.repositories.UserRepository;
@@ -157,6 +159,14 @@ public class PostServiceImpl implements PostServiceI {
 		PostDto dto = this.modelMapper.map(post, PostDto.class);
 		dto.setLikeCount((int) this.likeRepository.countByPost(post));
 		dto.setCommentCount((int) this.commentRepository.countByPost(post));
+		dto.setComments(post.getComments().stream().map(this::toCommentDto).collect(Collectors.toSet()));
+		return dto;
+	}
+
+	private CommentDto toCommentDto(Comment comment) {
+		CommentDto dto = this.modelMapper.map(comment, CommentDto.class);
+		dto.setParentCommentId(comment.getParentComment() == null ? null : comment.getParentComment().getCommentId());
+		dto.setAuthorName(comment.getUser() == null ? "User" : comment.getUser().getEmail());
 		return dto;
 	}
 
