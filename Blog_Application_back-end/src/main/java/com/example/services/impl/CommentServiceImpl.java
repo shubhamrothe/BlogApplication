@@ -44,10 +44,21 @@ public class CommentServiceImpl implements CommentServiceI{
 		Comment comment = this.modelMapper.map(commentDto, Comment.class);
 		comment.setPost(post);
 		comment.setUser(user);
+		if (commentDto.getParentCommentId() != null) {
+			Comment parent = this.commentRepository.findById(commentDto.getParentCommentId())
+					.orElseThrow(() -> new ResourceNotFoundException("Comment", "commentId", commentDto.getParentCommentId()));
+			if (!parent.getPost().getPostId().equals(postId)) {
+				throw new IllegalArgumentException("Reply must belong to the same post");
+			}
+			comment.setParentComment(parent);
+		}
 		Comment saved = this.commentRepository.save(comment);
 		post.setCommentCount((post.getCommentCount() == null ? 0 : post.getCommentCount()) + 1);
 		this.postRepository.save(post);
-		return this.modelMapper.map(saved, CommentDto.class);
+		CommentDto response = this.modelMapper.map(saved, CommentDto.class);
+		response.setParentCommentId(saved.getParentComment() == null ? null : saved.getParentComment().getCommentId());
+		response.setAuthorName(user.getEmail());
+		return response;
 	}
 
 	@Override

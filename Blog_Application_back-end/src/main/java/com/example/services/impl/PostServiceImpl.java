@@ -23,6 +23,8 @@ import com.example.payloads.PostResponse;
 import com.example.repositories.CategoryRepository;
 import com.example.repositories.PostRepository;
 import com.example.repositories.UserRepository;
+import com.example.repositories.LikeRepository;
+import com.example.repositories.CommentRepository;
 import com.example.services.PostServiceI;
 import org.springframework.security.access.AccessDeniedException;
 
@@ -39,6 +41,10 @@ public class PostServiceImpl implements PostServiceI {
 	private ModelMapper modelMapper;
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private LikeRepository likeRepository;
+	@Autowired
+	private CommentRepository commentRepository;
 	@Autowired
 	private CategoryRepository categoryRepository;
 
@@ -120,7 +126,7 @@ public class PostServiceImpl implements PostServiceI {
 		Pageable p= PageRequest.of(pageNumber, pageSize, sort);
 		Page<Post> pagePost = this.postRepository.findAll(p);
 		List<Post> allPosts = pagePost.getContent();
-		List<PostDto> listOfPostDto = allPosts.stream().map((post)->this.modelMapper.map(post, PostDto.class))
+		List<PostDto> listOfPostDto = allPosts.stream().map(this::toPostDto)
 		.collect(Collectors.toList());
 		//without pagination
 //		List<Post> listOfPosts = this.postRepository.findAll();
@@ -144,7 +150,14 @@ public class PostServiceImpl implements PostServiceI {
 		Post post = this.postRepository.findById(postId)
 				.orElseThrow(() -> new ResourceNotFoundException("Post", "postId", postId));
 		log.info("Completed the dao call to get a Post of postId: {}",postId);
-		return this.modelMapper.map(post, PostDto.class);
+		return this.toPostDto(post);
+	}
+
+	private PostDto toPostDto(Post post) {
+		PostDto dto = this.modelMapper.map(post, PostDto.class);
+		dto.setLikeCount((int) this.likeRepository.countByPost(post));
+		dto.setCommentCount((int) this.commentRepository.countByPost(post));
+		return dto;
 	}
 
 	@Override
@@ -163,7 +176,7 @@ public class PostServiceImpl implements PostServiceI {
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 
 		List<Post> listOfPost = this.postRepository.findByCategory(category);
-		List<PostDto> listOfPostDto = listOfPost.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
+		List<PostDto> listOfPostDto = listOfPost.stream().map(this::toPostDto)
 				.collect(Collectors.toList());
 		log.info("Completed the dao call to get a Post of categoryId: {}",categoryId);
 		return listOfPostDto;
@@ -175,7 +188,7 @@ public class PostServiceImpl implements PostServiceI {
 		User user = this.userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "userId", userId));
 		List<Post> listOfPost = this.postRepository.findByUser(user);
-		List<PostDto> listOfPostDto = listOfPost.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
+		List<PostDto> listOfPostDto = listOfPost.stream().map(this::toPostDto)
 				.collect(Collectors.toList());
 		log.info("Completed the dao call to get a Post of userId: {}",userId);
 		return listOfPostDto;
@@ -184,7 +197,7 @@ public class PostServiceImpl implements PostServiceI {
 	@Override
 	public List<PostDto> searchPosts(String keyword) {
 	List<Post> postsByKeyword = this.postRepository.findBypostTitleContaining(keyword);
-	List<PostDto> listOfPostDto = postsByKeyword.stream().map((post)-> this.modelMapper.map(post, PostDto.class))
+	List<PostDto> listOfPostDto = postsByKeyword.stream().map(this::toPostDto)
 	.collect(Collectors.toList());
 	return listOfPostDto;
 	}

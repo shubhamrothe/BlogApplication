@@ -280,6 +280,7 @@ function PostDetailsPage() {
   const [post, setPost] = useState(null);
   const [error, setError] = useState('');
   const [comment, setComment] = useState('');
+  const [replyTo, setReplyTo] = useState(null);
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [shareCount, setShareCount] = useState(0);
@@ -301,9 +302,10 @@ function PostDetailsPage() {
   const handleComment = async (event) => {
     event.preventDefault();
     if (!comment.trim()) return;
-    const result = await apiRequest(`/post/${postId}/comments`, { method: 'POST', body: { commentContent: comment } });
+    const result = await apiRequest(`/post/${postId}/comments`, { method: 'POST', body: { commentContent: comment, parentCommentId: replyTo } });
     setPost((current) => ({ ...current, comments: [...(current.comments || []), result], commentCount: (current.commentCount || 0) + 1 }));
     setComment('');
+    setReplyTo(null);
   };
   const handleShare = async () => {
     const url = window.location.href;
@@ -315,7 +317,7 @@ function PostDetailsPage() {
   };
   if (error) return <div className="page"><div className="card">Error: {error}</div></div>;
   if (!post) return <div className="page"><div className="card">Loading post...</div></div>;
-  return <div className="page"><article className="card post-detail"><span className="eyebrow">{post.category?.categoryTitle || 'Story'}</span><h1 className="page-title">{post.postTitle}</h1><p className="story-meta">Created by {post.createdBy || post.user?.userName || 'Unknown'} · {formatAuditDate(post.createdAt || post.addedDate)}{post.modifiedAt && ` · Modified by ${post.modifiedBy || 'Unknown'} on ${formatAuditDate(post.modifiedAt)}`}</p><p className="muted">{post.postContent}</p><p className="engagement-counts">{likeCount} likes · {post.commentCount || 0} comments · {shareCount} shares</p><div className="post-actions"><button className="btn btn-secondary" onClick={handleLike}>{liked ? 'Unlike' : 'Like'} {likeCount ? `(${likeCount})` : ''}</button><button className="btn btn-secondary" onClick={handleShare}>Share</button><Link className="btn btn-secondary" to="/posts">Back to posts</Link></div>{message && <p className="muted">{message}</p>}<form className="comment-form" onSubmit={handleComment}><label htmlFor="comment">Join the conversation</label><textarea id="comment" required minLength={2} maxLength={500} value={comment} onChange={(event) => setComment(event.target.value)} placeholder="Add a thoughtful comment..." /><button className="btn btn-primary" type="submit">Post comment</button></form><div className="comments">{(post.comments || []).map((item) => <div className="comment" key={item.commentId}><p>{item.commentContent}</p></div>)}</div></article></div>;
+  return <div className="page"><article className="card post-detail"><span className="eyebrow">{post.category?.categoryTitle || 'Story'}</span><h1 className="page-title">{post.postTitle}</h1><p className="story-meta">Created by {post.createdBy || post.user?.userName || 'Unknown'} · {formatAuditDate(post.createdAt || post.addedDate)}{post.modifiedAt && ` · Modified by ${post.modifiedBy || 'Unknown'} on ${formatAuditDate(post.modifiedAt)}`}</p><p className="muted">{post.postContent}</p><p className="engagement-counts">{likeCount} likes · {post.commentCount || 0} comments · {shareCount} shares</p><div className="post-actions"><button className="btn btn-secondary" onClick={handleLike}>{liked ? 'Unlike' : 'Like'} {likeCount ? `(${likeCount})` : ''}</button><button className="btn btn-secondary" onClick={handleShare}>Share</button><Link className="btn btn-secondary" to="/posts">Back to posts</Link></div>{message && <p className="muted">{message}</p>}<form className="comment-form" onSubmit={handleComment}><label htmlFor="comment">{replyTo ? 'Reply to comment' : 'Join the conversation'}</label>{replyTo && <button type="button" className="text-link" onClick={() => setReplyTo(null)}>Cancel reply</button>}<textarea id="comment" required minLength={2} maxLength={50} value={comment} onChange={(event) => setComment(event.target.value)} placeholder="Add a thoughtful comment..." /><button className="btn btn-primary" type="submit">{replyTo ? 'Post reply' : 'Post comment'}</button></form><div className="comments">{(post.comments || []).map((item) => <div className="comment" key={item.commentId}><p><strong>{item.authorName || 'User'}</strong> {item.commentContent}</p><button type="button" className="text-link" onClick={() => setReplyTo(item.commentId)}>Reply</button></div>)}</div></article></div>;
 }
 
 function CategoriesPage() {
